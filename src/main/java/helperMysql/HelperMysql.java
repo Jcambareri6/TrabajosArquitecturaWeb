@@ -57,7 +57,6 @@ public class HelperMysql {
         String tableProducto = "CREATE TABLE IF NOT EXISTS Producto (" +
                 "idProducto INT NOT NULL, " +
                 "nombre VARCHAR(500), " +
-                "edad INT NOT NULL, " +
                 "valor FLOAT NOT NULL, " +
                 "PRIMARY KEY (idProducto));";
         this.conn.prepareStatement(tableProducto).execute();
@@ -98,9 +97,7 @@ public class HelperMysql {
         this.InsertClientData(this.getData("clientes.csv"));
         this.InsertProductData(this.getData("productos.csv"));
         this.InsertFacturaData(this.getData("facturas.csv"));
-
-
-       // InsertProduct_FacturaData(this.getData("facturas-productos.csv"));
+        InsertProduct_FacturaData(this.getData("facturas-productos.csv"));
 
     }
 
@@ -135,7 +132,7 @@ public class HelperMysql {
                 String nombre = row.get(1);
                 String valor = row.get(2);
                 System.out.println(idProducto);
-                if(!idProducto.isEmpty() && !nombre.isEmpty() && valor.isEmpty()){
+                if(!idProducto.isEmpty() && !nombre.isEmpty() && !valor.isEmpty()){
                     try {
                         int id = Integer.parseInt(idProducto);
                         int valorProducto = Integer.parseInt(valor);
@@ -155,12 +152,13 @@ public void InsertFacturaData(Iterable<CSVRecord> data) throws Exception{
         if (row.size() <= 2) {
             String idFactura = row.get(0);
             String idCliente = row.get(1);
-            if(!idFactura.isEmpty() && idCliente.isEmpty()){
+            if(!idFactura.isEmpty() && !idCliente.isEmpty()){
                 try {
                     int id = Integer.parseInt(idCliente);
                     int idClient = Integer.parseInt(idCliente);
                     Factura f = new Factura(id, idClient);
-                    insertFactura(f, this.conn);
+                    this.insertFactura(f,this.conn);
+
                 }catch (NumberFormatException  e) {
                     System.err.println("Error de formato en datos de la factura : " + e.getMessage());
                 }
@@ -207,7 +205,7 @@ public void InsertProduct_FacturaData(Iterable<CSVRecord> data) throws Exception
         } finally {
 
             closePsAndCommit(conn, ps);
-            System.out.println("insertado");
+
         }
         return 0;
     }

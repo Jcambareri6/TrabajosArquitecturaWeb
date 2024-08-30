@@ -7,9 +7,9 @@ import helperMysql.HelperMysql;
 public class Main {
     public static void main(String[] args) throws Exception {
         HelperMysql helper = new HelperMysql();
-        helper.dropTables();
+         helper.dropTables();
         helper.createTables();
-        helper.insertData();
-        helper.closeConnection();
+          helper.insertData();
+       helper.closeConnection();
     }
 }
