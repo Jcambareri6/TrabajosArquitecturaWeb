@@ -1,5 +1,8 @@
 package helperMysql;
 
+import dao.ClienteDAO;
+import dao.FacturaDAO;
+import dao.ProductoDAO;
 import entities.Cliente;
 import entities.Producto;
 import entities.Factura;
@@ -97,7 +100,7 @@ public class HelperMysql {
         this.InsertClientData(this.getData("clientes.csv"));
         this.InsertProductData(this.getData("productos.csv"));
         this.InsertFacturaData(this.getData("facturas.csv"));
-        InsertProduct_FacturaData(this.getData("facturas-productos.csv"));
+        this.InsertProduct_FacturaData(this.getData("facturas-productos.csv"));
 
     }
 
@@ -136,6 +139,7 @@ public class HelperMysql {
                     try {
                         int id = Integer.parseInt(idProducto);
                         int valorProducto = Integer.parseInt(valor);
+
                         Producto producto = new Producto(id,nombre,valorProducto);
                         insertProducto(producto,this.conn);
                     } catch (NumberFormatException  e) {
@@ -154,9 +158,12 @@ public void InsertFacturaData(Iterable<CSVRecord> data) throws Exception{
             String idCliente = row.get(1);
             if(!idFactura.isEmpty() && !idCliente.isEmpty()){
                 try {
-                    int id = Integer.parseInt(idCliente);
+                    int id = Integer.parseInt(idFactura);
                     int idClient = Integer.parseInt(idCliente);
-                    Factura f = new Factura(id, idClient);
+                    ClienteDAO cliente = new ClienteDAO(this.conn);
+                    Cliente c = cliente.find(idClient);
+
+                    Factura f = new Factura(id, c);
                     this.insertFactura(f,this.conn);
 
                 }catch (NumberFormatException  e) {
@@ -175,9 +182,14 @@ public void InsertProduct_FacturaData(Iterable<CSVRecord> data) throws Exception
         if(!idProducto.isEmpty() &&!idFactura.isEmpty() && ! cantidad.isEmpty()){
             try {
             int IdF= Integer.parseInt(idFactura);
-            int id = Integer.parseInt(idProducto);
+            int idP = Integer.parseInt(idProducto);
             int cant = Integer.parseInt(cantidad);
-            Factura_Producto facturaProducto = new Factura_Producto(IdF,id,cant);
+            //
+                ProductoDAO  p = new ProductoDAO(this.conn);
+                FacturaDAO f = new FacturaDAO(this.conn);
+                Producto producto = p.find(idP);
+                Factura factura = f.find(IdF);
+            Factura_Producto facturaProducto = new Factura_Producto(factura,producto,cant);
             insertFactura_Producto(facturaProducto,this.conn);
             }catch (NumberFormatException  e) {
                 System.err.println("Error de formato en  los datos : " + e.getMessage());
@@ -237,6 +249,7 @@ public void InsertProduct_FacturaData(Iterable<CSVRecord> data) throws Exception
     public int insertFactura (Factura factura, Connection conn) throws Exception {
         String insert = "INSERT INTO Factura (idFactura, idCliente) VALUES (?, ?)";
         PreparedStatement ps = null;
+
         try {
             ps = conn.prepareStatement(insert);
             ps.setInt(1, factura.getIdFactura());

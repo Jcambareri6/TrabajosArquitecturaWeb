@@ -1,6 +1,8 @@
 package dao;
 
+import entities.Factura;
 import  entities.Factura_Producto;
+import entities.Producto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -46,7 +48,7 @@ public class Factura_ProductoDAO {
     }
 
 
-    public Factura_Producto find(Integer pk, Integer pk2) {
+    public Factura_Producto find(Factura pk, Producto pk2) {
         String query = "SELECT fp.cantidad" +
                 "FROM Factura_Producto fp " +
                 "WHERE fp.idFactura = ? &&" +
@@ -58,7 +60,7 @@ public class Factura_ProductoDAO {
 
         try {
             ps = conn.prepareStatement(query);
-            ps.setInt(1, pk);
+            ps.setInt(1, pk2.getIdProducto());
             rs = ps.executeQuery();
             if (rs.next()) {
                 int cantidad = rs.getInt("cantidad");

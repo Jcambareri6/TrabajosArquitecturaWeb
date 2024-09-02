@@ -3,9 +3,9 @@ package entities;
 public class Factura {
 
     private int idFactura;
-    private int idCliente;
+    private Cliente idCliente;
 
-    public Factura(int idFactura, int idCliente) {
+    public Factura(int idFactura, Cliente idCliente) {
         this.idFactura = idFactura;
         this.idCliente = idCliente;
     }
@@ -19,10 +19,10 @@ public class Factura {
     }
 
     public int getIdCliente() {
-        return idCliente;
+        return idCliente.getIdCliente();
     }
 
-    public void setIdCliente(int idCliente) {
+    public void setIdCliente(Cliente idCliente) {
         this.idCliente = idCliente;
     }
 

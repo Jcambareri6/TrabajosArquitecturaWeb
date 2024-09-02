@@ -2,29 +2,33 @@ package entities;
 
 public class Factura_Producto {
 
-    private int idFactura;
-    private int idProducto;
+    private Factura idFactura;
+    private Producto idProducto;
     private int cantidad;
 
-    public Factura_Producto(int idFactura, int idProducto, int cantidad) {
+    public Factura_Producto(Factura idFactura, Producto idProducto, int cantidad) {
         this.idFactura = idFactura;
         this.idProducto = idProducto;
         this.cantidad = cantidad;
     }
 
-    public int getIdFactura() {
-        return idFactura;
-    }
 
-    public void setIdFactura(int idFactura) {
-        this.idFactura = idFactura;
+    public int getIdFactura() {
+        return idFactura != null ? idFactura.getIdFactura() : 0;  // Ensure factura is not null
     }
 
     public int getIdProducto() {
-        return idProducto;
+        return idProducto != null ? idProducto.getIdProducto() : 0;
     }
 
-    public void setIdProducto(int idProducto) {
+
+    public void setIdFactura(Factura idFactura) {
+        this.idFactura = idFactura;
+    }
+
+
+
+    public void setIdProducto(Producto idProducto) {
         this.idProducto = idProducto;
     }
 

@@ -46,7 +46,7 @@ public class FacturaDAO {
 
 
     public Factura find(Integer pk) {
-        String query = "SELECT f.idCliente" +
+        String query = "SELECT f.idCliente " +  // Added a space after idCliente
                 "FROM Factura f " +
                 "WHERE f.idFactura = ?";
 
@@ -60,11 +60,12 @@ public class FacturaDAO {
             rs = ps.executeQuery();
             if (rs.next()) {
                 int idCliente = rs.getInt("idCliente");
-                facturaById = new Factura(pk, idCliente);
+                ClienteDAO clienteDao = new ClienteDAO(this.conn);
+                facturaById = new Factura(pk, clienteDao.find(idCliente));
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 if (ps != null) {
                     ps.close();
@@ -74,8 +75,8 @@ public class FacturaDAO {
                 e.printStackTrace();
             }
         }
-
         return facturaById;
     }
+
 
 }

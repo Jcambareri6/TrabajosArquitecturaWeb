@@ -1,5 +1,7 @@
 package org.example;
 
+import dao.ProductoDAO;
+import entities.Producto;
 import helperMysql.HelperMysql;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -8,8 +10,11 @@ public class Main {
     public static void main(String[] args) throws Exception {
         HelperMysql helper = new HelperMysql();
          helper.dropTables();
-        helper.createTables();
-          helper.insertData();
-       helper.closeConnection();
+      helper.createTables();
+         helper.insertData();
+        //ProductoDAO  p =  new ProductoDAO(helper.)
+      helper.closeConnection();
     }
+
+
 }
