@@ -1,11 +1,13 @@
 package dao;
 
+import dto.ClienteDTO;
 import entities.Cliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteDAO {
@@ -45,6 +47,47 @@ public class ClienteDAO {
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
     }
 
+    public List<ClienteDTO> obtenerClientesFacturado() {
+        List<ClienteDTO> clientes = new ArrayList<>();
+
+        String query = "SELECT c.idCliente, c.nombre, SUM(p.valor * fp.cantidad) AS total_facturado " +
+                "FROM Cliente c " +
+                "JOIN Factura f ON c.idCliente = f.idCliente " +
+                "JOIN Factura_Producto fp ON f.idFactura = fp.idFactura " +
+                "JOIN Producto p ON fp.idProducto = p.idProducto " +
+                "GROUP BY c.idCliente " +
+                "ORDER BY total_facturado DESC";
+
+        PreparedStatement ps = null; //???
+        ResultSet rs = null; //???
+
+        try {
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                int idCliente = rs.getInt("idCliente");
+                String nombre = rs.getString("nombre");
+                float totalFacturado = rs.getFloat("total_facturado");
+
+                ClienteDTO clienteDTO = new ClienteDTO(idCliente, nombre, totalFacturado);
+                clientes.add(clienteDTO);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                conn.commit();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return clientes;
+    }
 
     public Cliente find(Integer pk) {
         String query = "SELECT c.nombre, c.email " +

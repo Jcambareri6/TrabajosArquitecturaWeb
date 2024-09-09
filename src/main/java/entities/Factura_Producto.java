@@ -14,7 +14,7 @@ public class Factura_Producto {
 
 
     public int getIdFactura() {
-        return idFactura != null ? idFactura.getIdFactura() : 0;  // Ensure factura is not null
+        return idFactura != null ? idFactura.getIdFactura() : 0;
     }
 
     public int getIdProducto() {

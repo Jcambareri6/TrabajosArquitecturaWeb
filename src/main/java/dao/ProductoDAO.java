@@ -1,6 +1,7 @@
 package dao;
 
 import entities.Producto;
+import dto.ProductoDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -43,6 +44,44 @@ public class ProductoDAO {
     public boolean delete(Integer id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    }
+    public ProductoDTO obtenerProductoMasRecaudado() {
+        String query = "SELECT p.idProducto, p.nombre, SUM(fp.cantidad * p.valor) AS total_recaudado " +
+                "FROM Producto p " +
+                "JOIN Factura_Producto fp ON p.idProducto = fp.idProducto " +
+                "GROUP BY p.idProducto, p.nombre " +
+                "ORDER BY total_recaudado DESC " +
+                "LIMIT 1";
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        ProductoDTO productoMasRecaudado = null;
+
+        try {
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                int idProducto = rs.getInt("idProducto");
+                String nombre = rs.getString("nombre");
+                float totalRecaudado = rs.getFloat("total_recaudado");
+
+                productoMasRecaudado = new ProductoDTO(idProducto, nombre, totalRecaudado);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                conn.commit();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return productoMasRecaudado;
     }
 
 

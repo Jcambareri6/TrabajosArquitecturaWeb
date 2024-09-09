@@ -44,6 +44,10 @@ public class HelperMysql {
         }
     }
 
+    public Connection getConn() {
+        return conn;
+    }
+
     public void createTables() throws SQLException {
         System.out.println(this.conn);
 
@@ -305,6 +309,7 @@ public void InsertProduct_FacturaData(Iterable<CSVRecord> data) throws Exception
             }
         }
     }
+
     public void dropTables() throws SQLException {
         // Borrar la tabla Factura_Producto
         String dropFactura_Producto = "DROP TABLE IF EXISTS Factura_Producto;";
