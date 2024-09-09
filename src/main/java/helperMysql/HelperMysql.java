@@ -35,8 +35,8 @@ public class HelperMysql {
             System.exit(1);
         }
         try {
-           this.conn = DriverManager.getConnection(uri, "IntegradorUser", "password");
-           System.out.println();
+           this.conn = DriverManager.getConnection(uri, "root", "");
+           System.out.println("bd conectada");
             conn.setAutoCommit(false);
         } catch (Exception e) {
             System.err.println("Error al conectar con la base de datos: " + e.getMessage());
@@ -91,7 +91,7 @@ public class HelperMysql {
     }
 
     private Iterable<CSVRecord> getData(String archivo) throws IOException {
-        String path = "src\\main\\resources\\" + archivo;
+        String path = "src/main/resources/" + archivo;
         Reader in = new FileReader(path);
         String[] header = {};  // Puedes configurar tu encabezado personalizado aquí si es necesario
         CSVParser csvParser = CSVFormat.EXCEL.withHeader(header).parse(in);
@@ -138,7 +138,6 @@ public class HelperMysql {
                 String idProducto = row.get(0);
                 String nombre = row.get(1);
                 String valor = row.get(2);
-                System.out.println(idProducto);
                 if(!idProducto.isEmpty() && !nombre.isEmpty() && !valor.isEmpty()){
                     try {
                         int id = Integer.parseInt(idProducto);
