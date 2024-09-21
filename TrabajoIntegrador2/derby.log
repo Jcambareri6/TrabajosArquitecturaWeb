@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Sep 21 12:14:47 ART 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0192-1526-5681-00000716ab40 
+on database directory C:\Users\musimundo\Desktop\arquitecturasWeb\TrabajosArquitecturaWeb\TrabajoIntegrador2\exampleDBEjemplo with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@76ed5528 
+Loaded from file:/C:/Users/musimundo/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=22+36-2370
+user.dir=C:\Users\musimundo\Desktop\arquitecturasWeb\TrabajosArquitecturaWeb\TrabajoIntegrador2
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
