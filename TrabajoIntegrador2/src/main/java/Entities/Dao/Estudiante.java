@@ -13,8 +13,8 @@ import java.util.List;
 public class Estudiante {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long libretaUniversitaria;
+
+    private int libretaUniversitaria;
 
     @Column
     private String Nombre;
@@ -31,22 +31,27 @@ public class Estudiante {
     @Column
     private String CiudadResidencia;
 
-    @OneToMany(mappedBy = "estudiante")
-    private List<CarrerasCursadas> Carreras;
+    @OneToMany(mappedBy = "estudianteEnCarrera")
+    private List<CarrerasCursadas> carrera;
 
     // Default constructor
     public Estudiante() {
-        this.Carreras = new ArrayList<>();
+
     }
 
+
+
     // Parametrized constructor
-    public Estudiante(String Nombre, String Apellido, int Edad, String Genero) {
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
-        this.Edad = Edad;
-        this.Genero = Genero;
-        this.Carreras = new ArrayList<>();
+
+    public Estudiante(int libretaUniversitaria, String nombre, String apellido, int edad, String genero, String ciudadResidencia) {
+        this.libretaUniversitaria = libretaUniversitaria;
+        Nombre = nombre;
+        Apellido = apellido;
+        Edad = edad;
+        Genero = genero;
+        CiudadResidencia = ciudadResidencia;
     }
+
 
     // Getters and Setters
 
@@ -91,11 +96,31 @@ public class Estudiante {
         this.CiudadResidencia = CiudadResidencia;
     }
 
+    public int getLibretaUniversitaria() {
+        return libretaUniversitaria;
+    }
+
+    public void setLibretaUniversitaria(int libretaUniversitaria) {
+        this.libretaUniversitaria = libretaUniversitaria;
+    }
+
     public List<CarrerasCursadas> getCarreras() {
-        return Carreras;
+        return carrera;
     }
 
     public void setCarreras(List<CarrerasCursadas> Carreras) {
-        this.Carreras = Carreras;
+        this.carrera = Carreras;
+    }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "libretaUniversitaria=" + libretaUniversitaria +
+                ", Nombre='" + Nombre + '\'' +
+                ", Apellido='" + Apellido + '\'' +
+                ", Edad=" + Edad +
+                ", Genero='" + Genero + '\'' +
+                ", CiudadResidencia='" + CiudadResidencia + '\'' +
+                '}';
     }
 }

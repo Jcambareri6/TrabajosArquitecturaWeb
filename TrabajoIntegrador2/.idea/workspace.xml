@@ -5,49 +5,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdd92d82-be0a-4587-a73b-7be125507b2b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/TrabajosArquitecturaWeb.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/Carrera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/CarrerasCursadas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/Estudiante.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/dao/ClienteDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/dao/FacturaDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/dao/Factura_ProductoDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/dao/ProductoDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/dto/ClienteDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/dto/ProductoDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/entities/Cliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/entities/Factura.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/entities/Factura_Producto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/entities/Producto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/factory/AbstractFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/factory/MySQLDAOFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/helperMysql/HelperMysql.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/clientes.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/facturas-productos.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/facturas.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/productos.csv" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/docker/mysql.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/CarrerasCursadasPk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/CarreraRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/CarrerasCursadasRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/EstudianteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/RepositoryAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/db.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/log/log.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/log/log1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c101.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c101.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c111.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c111.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c121.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c121.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c130.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c130.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c141.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c141.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c150.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c150.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c161.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c161.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c171.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c171.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c20.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c20.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c200.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c200.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c211.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c211.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c221.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c221.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c230.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c230.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c31.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c31.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c400.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c400.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c41.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c41.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c411.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c411.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c421.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c421.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c51.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c51.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c60.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c60.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c71.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c81.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c81.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c90.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c90.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/ca1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/ca1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/cb1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/cf0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Dao/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/Carrera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Dao/CarrerasCursadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/CarrerasCursadas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Dao/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/Estudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -73,6 +95,11 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -81,6 +108,8 @@
       <recent name="C:\Users\musimundo\Desktop\arquitecturasWeb\TrabajosArquitecturaWeb\TrabajoIntegrador2\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\musimundo\Desktop\arquitecturasWeb\TrabajosArquitecturaWeb\TrabajoIntegrador2\src\main\docker" />
+      <recent name="C:\Users\musimundo\Desktop\arquitecturasWeb\TrabajosArquitecturaWeb\TrabajoIntegrador2\src" />
       <recent name="C:\Users\musimundo\Desktop\arquitecturasWeb\TrabajosArquitecturaWeb\TrabajoIntegrador2\src\main\resources" />
       <recent name="C:\Users\musimundo\Desktop\arquitecturasWeb\TrabajosArquitecturaWeb\TrabajoIntegrador2\src\main\java" />
       <recent name="C:\Users\musimundo\Desktop\arquitecturasWeb\TrabajosArquitecturaWeb\TrabajoIntegrador2\src\main" />
@@ -123,21 +152,17 @@
       <updated>1726928378006</updated>
       <workItem from="1726928380030" duration="2871000" />
       <workItem from="1726931405483" duration="324000" />
+      <workItem from="1726942473243" duration="1777000" />
+      <workItem from="1727114540977" duration="126000" />
+      <workItem from="1727115115219" duration="8575000" />
+      <workItem from="1727142956711" duration="2069000" />
+      <workItem from="1727145059788" duration="2494000" />
+      <workItem from="1727148737225" duration="771000" />
+      <workItem from="1727273341685" duration="5700000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/App.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

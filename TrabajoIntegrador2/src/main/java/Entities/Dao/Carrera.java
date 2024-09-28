@@ -1,44 +1,57 @@
 package Entities.Dao;
 
-import org.hibernate.annotations.Entity;
-
-import javax.persistence.*;
-import java.util.ArrayList;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-
 public class Carrera {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long idCarrera;
+    private int idCarrera;
 
     @Column
-    private String NombreCarrera;
+    private String Nombre;
 
+    @Column
+    private int Anios;
 
+    @OneToMany(mappedBy = "carreraCursada")
+    private List<CarrerasCursadas> estudiante;
 
-
-    @OneToMany(mappedBy = "carrera")
-    private List<Estudiante> estudiantes;
-
-    public Carrera() {
-        super();
-        this.estudiantes = new ArrayList<Estudiante>();
+    public Carrera(int idCarrera, String nombre, int anios) {
+        this.idCarrera = idCarrera;
+        Nombre = nombre;
+        Anios = anios;
     }
 
-    public Long getIdCarrera() {
-        return this.idCarrera;
+    public Carrera() {
+
+    }
+
+    public int getIdCarrera() {
+        return idCarrera;
+    }
+
+    public void setIdCarrera(int idCarrera) {
+        this.idCarrera = idCarrera;
     }
 
     public String getNombre() {
-        return this.NombreCarrera;
+        return Nombre;
     }
 
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
 
+    public int getAnios() {
+        return Anios;
+    }
 
-
-
-
+    public void setAnios(int anios) {
+        Anios = anios;
+    }
 }

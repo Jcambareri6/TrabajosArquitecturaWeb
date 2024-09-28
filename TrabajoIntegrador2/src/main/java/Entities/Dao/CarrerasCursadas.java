@@ -1,47 +1,39 @@
 package Entities.Dao;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "CarreraCursada")
 public class CarrerasCursadas {
+    public CarrerasCursadas(CarrerasCursadasPk id,boolean graduado, int antiguedad) {
+        this.id = id;
+        Graduado = graduado;
+        Antiguedad = antiguedad;
+    }
 
-    @ManyToOne
+    @EmbeddedId
+    private CarrerasCursadasPk id;
 
-    @JoinColumn(name="libretaUniversitaria")
-    private Estudiante alumno;
 
-    @ManyToOne
-    @JoinColumn(name="idCarrera")
-    private Carrera carrera;
+   @ManyToOne
+   @MapsId("idCarrera")
+   @JoinColumn(name = "carrera_id", referencedColumnName = "idCarrera", nullable = false)
+    private Carrera carreraCursada;
+   @ManyToOne
+   @MapsId("idEstudiante")
+   @JoinColumn(name = "idEstudiante")
+   private Estudiante estudianteEnCarrera;
 
     private boolean Graduado;
     private int Antiguedad;
 
-    @Id
-    private Long id;
-
-    // Getters and Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 
 
 
-    public Carrera getCarrera() {
-        return carrera;
-    }
 
-    public void setCarrera(Carrera carrera) {
-        this.carrera = carrera;
-    }
+
+
+
 
     public boolean isGraduado() {
         return Graduado;

@@ -1,6 +1,12 @@
 package org.example;
 
+import Entities.Dao.Carrera;
+import Entities.Dao.CarrerasCursadas;
+import Entities.Dao.CarrerasCursadasPk;
 import Entities.Dao.Estudiante;
+import Repository.CarreraRepository;
+import Repository.CarrerasCursadasRepository;
+import Repository.EstudianteRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,59 +21,67 @@ import java.util.List;
 public class App 
 {
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Example");
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
+
 
         //dar de alta un estudiante
-
-        //matricular un estudiante en una carrera
-        Estudiante estudiante = new Estudiante("Joaquin","BosteroCambareri",22,"Masculino");
-        em.persist(estudiante);
-        Estudiante ES = new Estudiante("Valentino","Malassisi",21,"Masculino");
-        em.persist(estudiante);
-        Estudiante ES2 = new Estudiante("Paula","Manzalini",50,"Femenino");
-        em.persist(estudiante);
-        Estudiante ES3 = new Estudiante("Neymar","Jr",32,"Masculino");
-        em.persist(estudiante);
-        Estudiante ES4 = new Estudiante();
-        em.persist(ES4);
+        CarreraRepository cr = new CarreraRepository();
+        EstudianteRepository repo = new EstudianteRepository();
+        CarrerasCursadasRepository carrerasCursadaRepo = new CarrerasCursadasRepository();
 
 
-        //recuperar todos los estudiantes, y especificar algún criterio de ordenamiento simple
-        @SuppressWarnings("unchecked")
-        List<Object[]> Consulta3 = em.createQuery("SELECT e.Nombre, e.Apellido, e.Edad, e.Genero " +
-                "FROM Estudiante e ORDER BY e.Edad").getResultList();
-        Consulta3.forEach(d -> System.out.println(Arrays.toString(d)));
 
-        //recuperar un estudiante, en base a su número de libreta universitaria.
-        Estudiante e = em.find(Estudiante.class, 1);
-        System.out.println(e);
 
-        //recuperar todos los estudiantes, en base a su género.
-        @SuppressWarnings("unchecked")
-        List<Object[]> Consulta5 = em.createQuery("SELECT e.Nombre, e.Apellido, e.Edad, e.Genero " +
-                "FROM Estudiante e WHERE e.Genero='Masculino'").getResultList();
-        Consulta5.forEach(d -> System.out.println(Arrays.toString(d)));
 
-        //recuperar las carreras con estudiantes inscriptos, y ordenar por cantidad de inscriptos.
-        @SuppressWarnings("unchecked")
-        List<Object[]> Consulta6 = em.createQuery("SELECT c.Nombre, c.Anios FROM Carrera c " +
-                "WHERE c.Estudiantes.size()>0 ORDER BY Estudiantes.size()").getResultList();
-        Consulta6.forEach(d -> System.out.println(Arrays.toString(d)));
-        em.getTransaction().commit();
 
-        //recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia
-        @SuppressWarnings("unchecked")
-        List<Object[]> Consulta7 = em.createQuery("SELECT e FROM Estudiante e JOIN e.Carreras c " +
-                "WHERE c.carrera='Ingenieria' AND e.CiudadResidencia='Necochea'").getResultList();
-        Consulta7.forEach(d -> System.out.println(Arrays.toString(d)));
+         //matricular un estudiante en una carrera
+        CarrerasCursadas cr1 = new CarrerasCursadas(new CarrerasCursadasPk(1,2),false,6);
+        CarrerasCursadas cr2 = new CarrerasCursadas(new CarrerasCursadasPk(2,3),false,4);
+        CarrerasCursadas cr3 = new CarrerasCursadas(new CarrerasCursadasPk(1,4),false,4);
+         carrerasCursadaRepo.add(cr1);
+         carrerasCursadaRepo.add(cr2);
+        carrerasCursadaRepo.add(cr3);
 
-        //Generar un reporte de las carreras, que para cada carrera incluya información de los
-        //inscriptos y egresados por año. Se deben ordenar las carreras alfabéticamente, y presentar
-        //los años de manera cronológica.
-        em.close();
-        emf.close();
-    }
+        List<Carrera> carreras = cr.getCarrerasOrderByInscriptos();
+
+        for (Carrera c : carreras){
+
+            System.out.println(c.toString());
+        }
+
+//        Estudiante estudiante = new Estudiante(6,"Joaquin","cambareri",18,"masculino","necochea");
+//
+////        repo.add(estudiante);
+//
+//        Estudiante estudiante2 = new Estudiante(7, "Valentino", "Malassisi", 21, "Masculino", "Buenos Aires");
+////        repo.add(estudiante2);
+//
+//        Estudiante estudiante3 = new Estudiante(8, "Paula", "Manzalini", 50, "Femenino", "Cordoba");
+////        repo.add(estudiante3);
+//
+//        Estudiante estudiante4 = new Estudiante(9, "Neymar", "Jr", 32, "Masculino", "Rio de Janeiro");
+////        repo.add(estudiante4);
+//
+//        // recuperar todos los estudiantes y especificar un criterio de ordenamiento
+//         List<Estudiante> estudiantesPorEdad = repo.getAllOrderByEdad();
+//         for (Estudiante e : estudiantesPorEdad){
+//             System.out.println(e.toString());
+//         }
+//
+//         //recuperar un estudiante en base a su numero de libreta
+//         Estudiante  estudianteNroLibreta = repo.getById(7);
+//         System.out.println("recuperar estudiante en base a su numero de libreta" +  estudianteNroLibreta.toString());
+//
+//        // recuperar todos los estudiantes en base a su genero
+//         List<Estudiante>estudiantesPorGenero = repo.getAllByGenero("masculino");
+//            System.out.println("Estudiantes genero Masculino");
+//                for (Estudiante e : estudiantesPorGenero){
+//                    System.out.println(e.toString());
+//                }
+//
+//        //recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia
+//
+//             List<Estudiante>Estudiantes_Carrera_CiudadResidencia = repo.getAllByCarreraAndCiudad("ingenieria","Necochea");
+//
+  }
 }
 
