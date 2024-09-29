@@ -5,51 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdd92d82-be0a-4587-a73b-7be125507b2b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/docker/mysql.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/CarrerasCursadasPk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/CarreraRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/CarrerasCursadasRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/EstudianteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/RepositoryAbstract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/db.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/log/log.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/log/log1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/log/logmirror.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c101.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c101.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c111.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c111.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c121.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c121.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c130.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c130.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c141.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c141.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c150.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c150.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c161.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c161.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c171.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c171.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c20.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c20.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c200.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c200.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c211.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c211.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c221.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c221.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c230.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c230.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c31.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c31.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c400.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c400.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c41.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c41.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c411.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c411.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c421.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c421.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c51.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c51.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c60.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c60.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c71.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c81.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c81.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c90.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/c90.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/ca1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/ca1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/cb1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleDBEjemplo/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/exampleDBEjemplo/seg0/cf0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Dao/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/Carrera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Dao/CarrerasCursadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/CarrerasCursadas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Dao/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/Estudiante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -27,12 +27,9 @@ public class CarrerasCursadas {
     private boolean Graduado;
     private int Antiguedad;
 
+    public CarrerasCursadas() {
 
-
-
-
-
-
+    }
 
 
     public boolean isGraduado() {

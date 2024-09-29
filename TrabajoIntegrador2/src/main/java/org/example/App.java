@@ -32,7 +32,6 @@ public class App
 
 
 
-
          //matricular un estudiante en una carrera
         CarrerasCursadas cr1 = new CarrerasCursadas(new CarrerasCursadasPk(1,2),false,6);
         CarrerasCursadas cr2 = new CarrerasCursadas(new CarrerasCursadasPk(2,3),false,4);
