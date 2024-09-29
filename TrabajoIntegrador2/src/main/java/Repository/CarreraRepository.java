@@ -69,6 +69,26 @@ public class CarreraRepository extends RepositoryAbstract {
         return carrerasInscriptos;
     }
 
+    public getReporte(){
+        List<Object> Consulta = em.createQuery(
+        "SELECT c.Nombre, " +
+        "YEAR(cc.Fecha_Inscripcion) AS Anio, " +  -- Aquí asumimos un campo Fecha_Inscripcion para contar inscriptos
+        "COUNT(CASE WHEN cc.Fecha_Inscripcion IS NOT NULL THEN 1 END) AS Inscriptos, " +
+        "COUNT(CASE WHEN cc.Fecha_graduacion IS NOT NULL THEN 1 END) AS Egresados " +
+        "FROM CarrerasCursadas cc " +
+        "JOIN Carrera c ON cc.id.idCarrera = c.idCarrera " +
+        "LEFT JOIN " +
+        "Estudiante e ON cc.id.idEstudiante = e.libreta_universitaria " +
+        "GROUP BY " +
+        "c.Nombre_Carrera, YEAR(cc.Fecha_Inscripcion), YEAR(cc.Fecha_graduacion) " +
+        "ORDER BY " +
+        "c.Nombre_Carrera ASC," +
+        "Anio ASC").getResultList();
+
+        //instanciar con el dto
+
+        returnConsulta;
+    }
 
 }
 
