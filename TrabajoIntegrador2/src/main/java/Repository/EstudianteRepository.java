@@ -18,10 +18,12 @@ public class EstudianteRepository extends RepositoryAbstract {
     @Override
     public List<Estudiante> getAll() {
         List<Estudiante> Consulta = this.em.createQuery("SELECT e from Estudiante  e ",Estudiante.class).getResultList();
-    return Consulta; }
+    return Consulta;
+    }
+
     @Override
     public Estudiante getById(int id) {
-        Estudiante estudiante = this.em.createQuery("SELECT e FROM Estudiante e WHERE e.id = :id", Estudiante.class)
+        Estudiante estudiante = this.em.createQuery("SELECT e FROM Estudiante e WHERE e.libretaUniversitaria = :id", Estudiante.class)
                 .setParameter("id", id)
                 .getSingleResult();
         return estudiante;
