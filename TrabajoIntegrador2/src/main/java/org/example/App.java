@@ -4,6 +4,7 @@ import Entities.Dao.Carrera;
 import Entities.Dao.CarrerasCursadas;
 import Entities.Dao.CarrerasCursadasPk;
 
+import Entities.Dao.Estudiante;
 import Repository.CarreraRepository;
 import Repository.CarrerasCursadasRepository;
 import Repository.EstudianteRepository;
@@ -44,9 +45,9 @@ public class App
             System.out.println(c.toString());
         }
 
-//        Estudiante estudiante = new Estudiante(6,"Joaquin","cambareri",18,"masculino","necochea");
-//
-////        repo.add(estudiante);gi
+        Estudiante estudiante = new Estudiante(6,"Joaquin","cambareri",18,"masculino","necochea");
+
+//        repo.add(estudiante);gi
 //
 //        Estudiante estudiante2 = new Estudiante(7, "Valentino", "Malassisi", 21, "Masculino", "Buenos Aires");
 ////        repo.add(estudiante2);
