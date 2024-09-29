@@ -1,6 +1,7 @@
 package Entities.Dao;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "CarreraCursada")
@@ -22,13 +23,24 @@ public class CarrerasCursadas {
 
    private boolean Graduado;
    private Date Fecha_inscripcion;
-   private Date Fecha_graduacion (nullable=true);
+   private Date Fecha_graduacion;
 
-    public CarrerasCursadas(CarrerasCursadasPk id,boolean graduado, int antiguedad) {
+
+    public CarrerasCursadas(CarrerasCursadasPk id, boolean graduado, Date fecha_inscripcion) {
         this.id = id;
         Graduado = graduado;
-        Antiguedad = antiguedad;
+        Fecha_inscripcion = fecha_inscripcion;
     }
+
+    public CarrerasCursadas(CarrerasCursadasPk id, boolean graduado, Date fecha_inscripcion, Date fecha_graduacion) {
+        this.id = id;
+        Graduado = graduado;
+        Fecha_inscripcion = fecha_inscripcion;
+        Fecha_graduacion = fecha_graduacion;
+    }
+
+
+
     public CarrerasCursadas() {
 
     }

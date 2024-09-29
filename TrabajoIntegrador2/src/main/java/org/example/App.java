@@ -10,53 +10,50 @@ import Repository.CarrerasCursadasRepository;
 import Repository.EstudianteRepository;
 
 
+import java.util.Date;
 import java.util.List;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
+
+public class App {
     public static void main(String[] args) {
 
 
-        //dar de alta un estudiante
         CarreraRepository cr = new CarreraRepository();
         EstudianteRepository repo = new EstudianteRepository();
         CarrerasCursadasRepository carrerasCursadaRepo = new CarrerasCursadasRepository();
 
+        Estudiante estudiante2 = new Estudiante(7, "Valentino", "Malassisi", 21, "Masculino", "Buenos Aires");
+        repo.add(estudiante2);
+
+        Estudiante estudiante3 = new Estudiante(8, "Paula", "Manzalini", 50, "Femenino", "Cordoba");
+        repo.add(estudiante3);
+
+        Estudiante estudiante4 = new Estudiante(9, "Neymar", "Jr", 32, "Masculino", "Rio de Janeiro");
+        repo.add(estudiante4);
+
+        Carrera carrera1 = new Carrera(1, "dentista", 5);
+        Carrera carrera2 = new Carrera(2, "ingeniero", 6);
+
+        cr.add(carrera1);
+        cr.add(carrera2);
 
 
-
-
-         //matricular un estudiante en una carrera
-        CarrerasCursadas cr1 = new CarrerasCursadas(new CarrerasCursadasPk(1,2),false,6);
-        CarrerasCursadas cr2 = new CarrerasCursadas(new CarrerasCursadasPk(2,3),false,4);
-        CarrerasCursadas cr3 = new CarrerasCursadas(new CarrerasCursadasPk(1,4),false,4);
-         carrerasCursadaRepo.add(cr1);
-         carrerasCursadaRepo.add(cr2);
+        //matricular un estudiante en una carrera
+        CarrerasCursadas cr1 = new CarrerasCursadas(new CarrerasCursadasPk(1, 2), false, new Date());
+        CarrerasCursadas cr2 = new CarrerasCursadas(new CarrerasCursadasPk(2, 3), false, new Date());
+        CarrerasCursadas cr3 = new CarrerasCursadas(new CarrerasCursadasPk(1, 4), false, new Date());
+        carrerasCursadaRepo.add(cr1);
+        carrerasCursadaRepo.add(cr2);
         carrerasCursadaRepo.add(cr3);
 
         List<Carrera> carreras = cr.getCarrerasOrderByInscriptos();
 
-        for (Carrera c : carreras){
+        for (Carrera c : carreras) {
 
             System.out.println(c.toString());
         }
 
-        Estudiante estudiante = new Estudiante(6,"Joaquin","cambareri",18,"masculino","necochea");
 
-//        repo.add(estudiante);gi
-//
-//        Estudiante estudiante2 = new Estudiante(7, "Valentino", "Malassisi", 21, "Masculino", "Buenos Aires");
-////        repo.add(estudiante2);
-//
-//        Estudiante estudiante3 = new Estudiante(8, "Paula", "Manzalini", 50, "Femenino", "Cordoba");
-////        repo.add(estudiante3);
-//
-//        Estudiante estudiante4 = new Estudiante(9, "Neymar", "Jr", 32, "Masculino", "Rio de Janeiro");
-////        repo.add(estudiante4);
 //
 //        // recuperar todos los estudiantes y especificar un criterio de ordenamiento
 //         List<Estudiante> estudiantesPorEdad = repo.getAllOrderByEdad();
@@ -79,6 +76,6 @@ public class App
 //
 //             List<Estudiante>Estudiantes_Carrera_CiudadResidencia = repo.getAllByCarreraAndCiudad("ingenieria","Necochea");
 //
-  }
+    }
 }
 
