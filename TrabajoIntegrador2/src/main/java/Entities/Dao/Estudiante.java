@@ -1,11 +1,6 @@
 package Entities.Dao;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Column;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +26,7 @@ public class Estudiante {
     @Column
     private String CiudadResidencia;
 
-    @OneToMany(mappedBy = "estudianteEnCarrera")
+    @OneToMany(mappedBy = "estudianteEnCarrera", fetch= FetchType.LAZY)
     private List<CarrerasCursadas> carrera;
 
     // Default constructor

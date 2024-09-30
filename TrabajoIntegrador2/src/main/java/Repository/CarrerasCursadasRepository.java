@@ -30,22 +30,19 @@ public class CarrerasCursadasRepository extends  RepositoryAbstract {
     public void  add (CarrerasCursadas cr){
 
             // Obtenemos el objeto EntityTransaction del EntityManager
-            EntityTransaction tx = em.getTransaction();
+
 
             try {
 
-                tx.begin();
 
 
                 em.persist(cr);
 
 
-                tx.commit();
+                em.getTransaction().commit();
             } catch (Exception e) {
                 // Si ocurre un error, hacemos rollback
-                if (tx.isActive()) {
-                    tx.rollback();
-                }
+
                 e.printStackTrace();
             }
         }

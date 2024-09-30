@@ -26,23 +26,24 @@ public class App {
         Carrera carrera1 = new Carrera(1, "dentista", 5);
         Carrera carrera2 = new Carrera(2, "ingeniero", 6);
 
-//        cr.add(carrera2);
+        cr.add(carrera1);
+        cr.add(carrera2);
 
-
+//
         //dar de alta un estudiante
-        Estudiante estudiantePrueba = new Estudiante(12,"Prueba", "Apellido",43,"Masculino","Tandil");
+        Estudiante estudiantePrueba = new Estudiante(1,"Prueba", "Apellido",43,"Masculino","Tandil");
         repo.add(estudiantePrueba);
-
+        Carrera c = cr.getById(1);
+        Estudiante es = repo.getById(1);
 
 
 
 
         //matricular un estudiante en una carrera
         System.out.println("antes de instanciar carrerasCursadas" );
-        CarrerasCursadas cr1 = new CarrerasCursadas(new CarrerasCursadasPk(carrera1.getIdCarrera(),estudiantePrueba.getLibretaUniversitaria()), false, new Date());
-        cr1.setCarreraCursada(carrera1);
-        cr1.setEstudianteEnCarrera(estudiantePrueba);
-        System.out.println(cr1.getCarreraCursada().toString());
+        CarrerasCursadas cr1 = new CarrerasCursadas(es,c,null);
+
+
 
         carrerasCursadaRepo.add(cr1);
 

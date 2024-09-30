@@ -1,9 +1,6 @@
 package Entities.Dao;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -18,7 +15,7 @@ public class Carrera {
     @Column
     private int Anios;
 
-    @OneToMany(mappedBy = "carreraCursada")
+    @OneToMany(mappedBy = "carreraCursada",fetch = FetchType.LAZY)
     private List<CarrerasCursadas> estudiante;
 
     public Carrera(int idCarrera, String nombre, int anios) {

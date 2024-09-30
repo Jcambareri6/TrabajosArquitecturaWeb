@@ -1079,7 +1079,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="292" parent="1" name="tp2">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-09-24.03:43:01</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-09-30.18:57:10</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="293" parent="1" name="root">
@@ -1139,83 +1139,85 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="306" parent="299" name="idCarrera">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="306" parent="299" name="Fecha_graduacion">
+      <DasType>datetime(6)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="307" parent="299" name="idEstudiante">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="307" parent="299" name="Fecha_inscripcion">
+      <DasType>datetime(6)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="308" parent="299" name="Antiguedad">
-      <DasType>int|0s</DasType>
+    <column id="308" parent="299" name="Graduado">
+      <DasType>bit(1)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="309" parent="299" name="Graduado">
-      <DasType>bit(1)|0s</DasType>
+    <column id="309" parent="299" name="carreraCursada_idCarrera">
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="310" parent="299" name="FKf9ewjm9ogimjfpyls24pvxjyr">
-      <ColNames>idCarrera</ColNames>
+    <column id="310" parent="299" name="estudianteEnCarrera_libretaUniversitaria">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="311" parent="299" name="FK2j70gae96aqg4e94i6cupfcni">
+      <ColNames>carreraCursada_idCarrera</ColNames>
       <RefColNames>idCarrera</RefColNames>
       <RefTableName>Carrera</RefTableName>
     </foreign-key>
-    <foreign-key id="311" parent="299" name="FKs2kxal2ocu88id5b6xhji45gm">
-      <ColNames>idEstudiante</ColNames>
+    <foreign-key id="312" parent="299" name="FKlk7rtl91wytqklmygmvphtwjp">
+      <ColNames>estudianteEnCarrera_libretaUniversitaria</ColNames>
       <RefColNames>libretaUniversitaria</RefColNames>
       <RefTableName>Estudiante</RefTableName>
     </foreign-key>
-    <index id="312" parent="299" name="PRIMARY">
-      <ColNames>idCarrera
-idEstudiante</ColNames>
+    <index id="313" parent="299" name="PRIMARY">
+      <ColNames>carreraCursada_idCarrera
+estudianteEnCarrera_libretaUniversitaria</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="313" parent="299" name="FKs2kxal2ocu88id5b6xhji45gm">
-      <ColNames>idEstudiante</ColNames>
+    <index id="314" parent="299" name="FKlk7rtl91wytqklmygmvphtwjp">
+      <ColNames>estudianteEnCarrera_libretaUniversitaria</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="314" parent="299" name="PRIMARY">
+    <key id="315" parent="299" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="315" parent="300" name="libretaUniversitaria">
-      <AutoIncrement>3</AutoIncrement>
+    <column id="316" parent="300" name="libretaUniversitaria">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="316" parent="300" name="Apellido">
+    <column id="317" parent="300" name="Apellido">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="317" parent="300" name="CiudadResidencia">
+    <column id="318" parent="300" name="CiudadResidencia">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="318" parent="300" name="Edad">
+    <column id="319" parent="300" name="Edad">
       <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="319" parent="300" name="Genero">
+    <column id="320" parent="300" name="Genero">
       <DasType>varchar(255)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="320" parent="300" name="Nombre">
+    <column id="321" parent="300" name="Nombre">
       <DasType>varchar(255)|0s</DasType>
       <Position>6</Position>
     </column>
-    <index id="321" parent="300" name="PRIMARY">
+    <index id="322" parent="300" name="PRIMARY">
       <ColNames>libretaUniversitaria</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="322" parent="300" name="PRIMARY">
+    <key id="323" parent="300" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

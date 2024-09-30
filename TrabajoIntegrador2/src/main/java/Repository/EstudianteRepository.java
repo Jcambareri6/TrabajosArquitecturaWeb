@@ -8,11 +8,19 @@ import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 public class EstudianteRepository extends RepositoryAbstract {
+    private static EstudianteRepository Singleton = null;
 
     public EstudianteRepository() {
         super();
 
     }
+    public static EstudianteRepository getEstudianteRepository(){
+        if(Singleton==null){
+            Singleton = new EstudianteRepository();
+        }
+        return Singleton;
+    }
+
 
 
     @Override
@@ -23,9 +31,7 @@ public class EstudianteRepository extends RepositoryAbstract {
 
     @Override
     public Estudiante getById(int id) {
-        Estudiante estudiante = this.em.createQuery("SELECT e FROM Estudiante e WHERE e.libretaUniversitaria = :id", Estudiante.class)
-                .setParameter("id", id)
-                .getSingleResult();
+        Estudiante estudiante = this.em.find(Estudiante.class,id);
         return estudiante;
     }
 
@@ -36,7 +42,7 @@ public class EstudianteRepository extends RepositoryAbstract {
           em.getTransaction().begin();
 
 
-            Estudiante estudiante = em.find(Estudiante.class, id);
+            Estudiante estudiante =this.em.find(Estudiante.class, id);
 
             if (estudiante != null) {
 
@@ -54,22 +60,20 @@ public class EstudianteRepository extends RepositoryAbstract {
     //matricular un estudiante en una carrera
     public void add(Estudiante estudiante) {
         // Obtenemos el objeto EntityTransaction del EntityManager
-        EntityTransaction tx = em.getTransaction();
+
 
         try {
 
-            tx.begin();
+
 
 
             em.persist(estudiante);
 
 
-            tx.commit();
+            em.getTransaction().commit();
         } catch (Exception e) {
 
-            if (tx.isActive()) {
-                tx.rollback();
-            }
+
             e.printStackTrace();
         }
     }

@@ -20,9 +20,7 @@ public class CarreraRepository extends RepositoryAbstract {
 
     @Override
     public Carrera getById(int id) {
-        Carrera c = this.em.createQuery("SELECT c FROM Carrera c WHERE c.idCarrera = :id", Carrera.class)
-                .setParameter("id", id)
-                .getSingleResult();
+        Carrera c = this.em.find(Carrera.class,id);
         return c;
     }
 
