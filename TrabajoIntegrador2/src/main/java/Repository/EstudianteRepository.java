@@ -4,6 +4,7 @@ import Entities.Dao.Estudiante;
 import org.hibernate.tuple.entity.EntityTuplizer;
 
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
@@ -11,7 +12,8 @@ public class EstudianteRepository extends RepositoryAbstract {
     private static EstudianteRepository Singleton = null;
 
     public EstudianteRepository() {
-        super();
+        this.emf = Persistence.createEntityManagerFactory("Example");
+        this.em = emf.createEntityManager();
 
     }
     public static EstudianteRepository getEstudianteRepository(){
@@ -60,22 +62,10 @@ public class EstudianteRepository extends RepositoryAbstract {
     //matricular un estudiante en una carrera
     public void add(Estudiante estudiante) {
         // Obtenemos el objeto EntityTransaction del EntityManager
+        em.getTransaction().begin();
+        em.persist(estudiante);
+        em.getTransaction().commit();
 
-
-        try {
-
-
-
-
-            em.persist(estudiante);
-
-
-            em.getTransaction().commit();
-        } catch (Exception e) {
-
-
-            e.printStackTrace();
-        }
     }
 
 

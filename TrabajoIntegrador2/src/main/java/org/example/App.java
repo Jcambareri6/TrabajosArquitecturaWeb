@@ -26,15 +26,15 @@ public class App {
         Carrera carrera1 = new Carrera(1, "dentista", 5);
         Carrera carrera2 = new Carrera(2, "ingeniero", 6);
 
-        cr.add(carrera1);
-        cr.add(carrera2);
+      cr.add(carrera1);
+//       cr.add(carrera2);
 
-//
-        //dar de alta un estudiante
-        Estudiante estudiantePrueba = new Estudiante(1,"Prueba", "Apellido",43,"Masculino","Tandil");
-        repo.add(estudiantePrueba);
+
+//        dar de alta un estudiante
+       Estudiante estudiantePrueba = new Estudiante(1,"Prueba", "Apellido",43,"Masculino","Tandil");
+       repo.add(estudiantePrueba);
         Carrera c = cr.getById(1);
-        Estudiante es = repo.getById(1);
+       Estudiante es = repo.getById(1);
 
 
 

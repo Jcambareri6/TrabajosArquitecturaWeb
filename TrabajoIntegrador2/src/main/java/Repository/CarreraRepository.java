@@ -4,12 +4,14 @@ import Entities.Dao.Carrera;
 import Entities.Dao.Estudiante;
 
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 public class CarreraRepository extends RepositoryAbstract {
     public CarreraRepository (){
-        super();
+        this.emf = Persistence.createEntityManagerFactory("Example");
+        this.em = emf.createEntityManager();
     }
 
     @Override
@@ -41,24 +43,10 @@ public class CarreraRepository extends RepositoryAbstract {
     }
 
     public void add (Carrera c){
-        EntityTransaction tx = em.getTransaction();
+        em.getTransaction().begin();
+        em.persist(c);
+        em.getTransaction().commit();
 
-        try {
-
-            tx.begin();
-
-
-            em.persist(c);
-
-
-            tx.commit();
-        } catch (Exception e) {
-            // Si ocurre un error, hacemos rollback
-            if (tx.isActive()) {
-                tx.rollback();
-            }
-            e.printStackTrace();
-        }
     }
     public List<Carrera> getCarrerasOrderByInscriptos() {
         List<Carrera> carrerasInscriptos = em.createQuery("SELECT c FROM Carrera c " +

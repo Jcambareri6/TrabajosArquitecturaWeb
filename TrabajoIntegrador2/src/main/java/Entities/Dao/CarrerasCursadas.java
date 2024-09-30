@@ -1,5 +1,7 @@
 package Entities.Dao;
 
+
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -11,14 +13,14 @@ public class CarrerasCursadas {
     private CarrerasCursadasPk id;
 
 
-   @ManyToOne
+   @ManyToOne(cascade = CascadeType.REFRESH )
    @MapsId("idCarrera")
-
+   @JoinColumn(name="idCarrera")
    private Carrera carreraCursada;
 
-   @ManyToOne
+   @ManyToOne(cascade = CascadeType.REFRESH )
    @MapsId("idEstudiante")
-
+   @JoinColumn(name="idEstudiante")
    private Estudiante estudianteEnCarrera;
 
    private boolean Graduado;
@@ -31,8 +33,8 @@ public class CarrerasCursadas {
     public CarrerasCursadas( Estudiante es, Carrera c, Date fecha_graduacion) {
 
         this.id=new CarrerasCursadasPk(c.getIdCarrera(),es.getLibretaUniversitaria());
-        this.estudianteEnCarrera=es;
-        this.carreraCursada=c;
+//        this.estudianteEnCarrera=es;
+//        this.carreraCursada=c;
         Fecha_inscripcion =  new Date();
         Fecha_graduacion = fecha_graduacion;
     }
@@ -74,5 +76,17 @@ public class CarrerasCursadas {
 
     public void setEstudianteEnCarrera(Estudiante estudianteEnCarrera) {
         this.estudianteEnCarrera = estudianteEnCarrera;
+    }
+
+    @Override
+    public String toString() {
+        return "CarrerasCursadas{" +
+                "id=" + id +
+                ", carreraCursada=" + carreraCursada +
+                ", estudianteEnCarrera=" + estudianteEnCarrera +
+                ", Graduado=" + Graduado +
+                ", Fecha_inscripcion=" + Fecha_inscripcion +
+                ", Fecha_graduacion=" + Fecha_graduacion +
+                '}';
     }
 }

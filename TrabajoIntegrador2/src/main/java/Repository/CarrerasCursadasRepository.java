@@ -4,12 +4,14 @@ import Entities.Dao.CarrerasCursadas;
 import Entities.Dao.Estudiante;
 
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 public class CarrerasCursadasRepository extends  RepositoryAbstract {
     public CarrerasCursadasRepository() {
-        super();
+        this.emf = Persistence.createEntityManagerFactory("Example");
+        this.em = emf.createEntityManager();
     }
 
     @Override
@@ -28,24 +30,12 @@ public class CarrerasCursadasRepository extends  RepositoryAbstract {
     }
 
     public void  add (CarrerasCursadas cr){
+        em.getTransaction().begin();
 
-            // Obtenemos el objeto EntityTransaction del EntityManager
+        em.persist(cr);
+        em.getTransaction().commit();
 
-
-            try {
-
-
-
-                em.persist(cr);
-
-
-                em.getTransaction().commit();
-            } catch (Exception e) {
-                // Si ocurre un error, hacemos rollback
-
-                e.printStackTrace();
-            }
-        }
+    }
     }
 
 

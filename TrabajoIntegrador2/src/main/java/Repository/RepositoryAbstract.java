@@ -10,8 +10,7 @@ public  abstract  class RepositoryAbstract<T>  {
     protected EntityManagerFactory emf;
 
     public RepositoryAbstract (){
-        this.emf = Persistence.createEntityManagerFactory("Example");
-        this.em = emf.createEntityManager();
+
 
     }
 

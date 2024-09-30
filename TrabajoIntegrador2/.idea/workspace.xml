@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd92d82-be0a-4587-a73b-7be125507b2b" name="Changes" comment="" />
+    <list default="true" id="bdd92d82-be0a-4587-a73b-7be125507b2b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aa8d5dc4-7cf8-427d-9595-a94c8d58b5d7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aa8d5dc4-7cf8-427d-9595-a94c8d58b5d7/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aa8d5dc4-7cf8-427d-9595-a94c8d58b5d7/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aa8d5dc4-7cf8-427d-9595-a94c8d58b5d7/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aa8d5dc4-7cf8-427d-9595-a94c8d58b5d7/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aa8d5dc4-7cf8-427d-9595-a94c8d58b5d7/storage_v2/_src_/schema/tp2.NsEBAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docker/mysql.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docker/mysql.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Dao/CarrerasCursadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/CarrerasCursadas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/CarreraRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repository/CarreraRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/CarrerasCursadasRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repository/CarrerasCursadasRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/EstudianteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repository/EstudianteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/RepositoryAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repository/RepositoryAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +131,8 @@
       <workItem from="1727145059788" duration="2494000" />
       <workItem from="1727148737225" duration="771000" />
       <workItem from="1727273341685" duration="5700000" />
-      <workItem from="1727657626756" duration="9122000" />
+      <workItem from="1727657626756" duration="10250000" />
+      <workItem from="1727724965050" duration="5070000" />
     </task>
     <servers />
   </component>

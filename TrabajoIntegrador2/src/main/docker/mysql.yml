@@ -7,5 +7,6 @@ services:
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_DATABASE=tp2
+      - MYSQL_USERNAME=root
     ports:
-      - "127.0.0.1:3306:3306"
+      - "127.0.0.1:3307:3306"
