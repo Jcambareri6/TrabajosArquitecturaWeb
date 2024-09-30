@@ -23,8 +23,6 @@ public class EstudianteRepository extends RepositoryAbstract {
         return Singleton;
     }
 
-
-
     @Override
     public List<Estudiante> getAll() {
         List<Estudiante> Consulta = this.em.createQuery("SELECT e from Estudiante  e ",Estudiante.class).getResultList();

@@ -13,6 +13,12 @@ public class CarrerasCursadasRepository extends  RepositoryAbstract {
         this.emf = Persistence.createEntityManagerFactory("Example");
         this.em = emf.createEntityManager();
     }
+    public static CarrerasCursadasRepository getCarrerasCursadasRepository(){
+        if(Singleton==null){
+            Singleton = new CarrerasCursadasRepository();
+        }
+        return Singleton;
+    }
 
     @Override
     public List<CarrerasCursadas> getAll() {
