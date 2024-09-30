@@ -1,15 +1,12 @@
-
-
-public class CarreraDTO {
+public class CarrerasCursadasDto {
     private List<Carrera> carreras;
-
-    public CarreraDTo(){
 
     private String NombreCarrera;
     private int Año_Fecha_inscripcionEstudiante;
     private int Count_Fecha_inscripcionEstudiante;
     private int Count_Fecha_graduacionEstudiante;
 
-    }
+
+}
 
 
