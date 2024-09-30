@@ -11,6 +11,12 @@ public class CarrerasCursadasRepository extends  RepositoryAbstract {
     public CarrerasCursadasRepository() {
         super();
     }
+    public static CarrerasCursadasRepository getCarrerasCursadasRepository(){
+        if(Singleton==null){
+            Singleton = new CarrerasCursadasRepository();
+        }
+        return Singleton;
+    }
 
     @Override
     public List<CarrerasCursadas> getAll() {

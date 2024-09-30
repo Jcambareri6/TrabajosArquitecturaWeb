@@ -18,26 +18,21 @@ public class App {
     public static void main(String[] args) {
 
 
-        CarreraRepository cr = new CarreraRepository();
-        EstudianteRepository repo = new EstudianteRepository();
+        CarreraRepository carreraRepo = new CarreraRepository();
+        EstudianteRepository estudianteRepo = new EstudianteRepository();
         CarrerasCursadasRepository carrerasCursadaRepo = new CarrerasCursadasRepository();
 
-
+        //agrego carrera
         Carrera carrera1 = new Carrera(1, "dentista", 5);
-        Carrera carrera2 = new Carrera(2, "ingeniero", 6);
+        carreraRepo.add(carrera1);
 
-        cr.add(carrera1);
-        cr.add(carrera2);
-
-//
-        //dar de alta un estudiante
-        Estudiante estudiantePrueba = new Estudiante(1,"Prueba", "Apellido",43,"Masculino","Tandil");
-        repo.add(estudiantePrueba);
-        Carrera c = cr.getById(1);
-        Estudiante es = repo.getById(1);
+        //agrego estudiante
+        Estudiante estudiante1 = new Estudiante(1,"Prueba", "Apellido",43,"Masculino","Tandil");
+        estudianteRepo.add(estudiante1);
 
 
-
+        Carrera c = carreraRepo.getById(1);
+        Estudiante es = estudianteRepo.getById(1);
 
         //matricular un estudiante en una carrera
         System.out.println("antes de instanciar carrerasCursadas" );

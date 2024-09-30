@@ -8,8 +8,15 @@ import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 public class CarreraRepository extends RepositoryAbstract {
+
     public CarreraRepository (){
         super();
+    }
+    public static CarreraRepository getCarreraRepository(){
+        if(Singleton==null){
+            Singleton = new CarreraRepository();
+        }
+        return Singleton;
     }
 
     @Override
