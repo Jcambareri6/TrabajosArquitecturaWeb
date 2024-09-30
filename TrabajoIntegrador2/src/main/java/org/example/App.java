@@ -22,35 +22,32 @@ public class App {
         EstudianteRepository repo = new EstudianteRepository();
         CarrerasCursadasRepository carrerasCursadaRepo = new CarrerasCursadasRepository();
 
-        Estudiante estudiante2 = new Estudiante(7, "Valentino", "Malassisi", 21, "Masculino", "Buenos Aires");
-        repo.add(estudiante2);
-
-        Estudiante estudiante3 = new Estudiante(8, "Paula", "Manzalini", 50, "Femenino", "Cordoba");
-        repo.add(estudiante3);
-
-        Estudiante estudiante4 = new Estudiante(9, "Neymar", "Jr", 32, "Masculino", "Rio de Janeiro");
-        repo.add(estudiante4);
 
         Carrera carrera1 = new Carrera(1, "dentista", 5);
         Carrera carrera2 = new Carrera(2, "ingeniero", 6);
 
-        cr.add(carrera1);
-        cr.add(carrera2);
+//        cr.add(carrera2);
 
 
         //dar de alta un estudiante
         Estudiante estudiantePrueba = new Estudiante(12,"Prueba", "Apellido",43,"Masculino","Tandil");
         repo.add(estudiantePrueba);
-        repo.delete(estudiantePrueba.getLibretaUniversitaria());
+
+
+
 
 
         //matricular un estudiante en una carrera
-        CarrerasCursadas cr1 = new CarrerasCursadas(new CarrerasCursadasPk(1, 2), false, new Date());
-        CarrerasCursadas cr2 = new CarrerasCursadas(new CarrerasCursadasPk(2, 3), false, new Date());
-        CarrerasCursadas cr3 = new CarrerasCursadas(new CarrerasCursadasPk(1, 4), false, new Date());
+        System.out.println("antes de instanciar carrerasCursadas" );
+        CarrerasCursadas cr1 = new CarrerasCursadas(new CarrerasCursadasPk(carrera1.getIdCarrera(),estudiantePrueba.getLibretaUniversitaria()), false, new Date());
+        cr1.setCarreraCursada(carrera1);
+        cr1.setEstudianteEnCarrera(estudiantePrueba);
+        System.out.println(cr1.getCarreraCursada().toString());
+
         carrerasCursadaRepo.add(cr1);
-        carrerasCursadaRepo.add(cr2);
-        carrerasCursadaRepo.add(cr3);
+
+//        carrerasCursadaRepo.add(cr2);
+//        carrerasCursadaRepo.add(cr3);
 
 //      recuperar todos los estudiantes y especificar un criterio de ordenamiento
 //      List<Estudiante> estudiantesPorEdad = repo.getAllOrderByEdad();

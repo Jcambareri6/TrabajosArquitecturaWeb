@@ -11,7 +11,7 @@ public class EstudianteRepository extends RepositoryAbstract {
 
     public EstudianteRepository() {
         super();
-        System.out.println(em);
+
     }
 
 
@@ -33,7 +33,7 @@ public class EstudianteRepository extends RepositoryAbstract {
     public Boolean delete(int id) {
 
             // Begin transaction
-
+          em.getTransaction().begin();
 
 
             Estudiante estudiante = em.find(Estudiante.class, id);
@@ -66,7 +66,7 @@ public class EstudianteRepository extends RepositoryAbstract {
 
             tx.commit();
         } catch (Exception e) {
-            // Si ocurre un error, hacemos rollback
+
             if (tx.isActive()) {
                 tx.rollback();
             }

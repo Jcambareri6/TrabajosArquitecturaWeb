@@ -62,6 +62,19 @@ public class CarrerasCursadas {
 
     public void setFecha_graduacion(Date fecha_graduacion) { this.Fecha_graduacion = fecha_graduacion; }
 
+    public Carrera getCarreraCursada() {
+        return carreraCursada;
+    }
 
+    public void setCarreraCursada(Carrera carreraCursada) {
+        this.carreraCursada = carreraCursada;
+    }
 
+    public Estudiante getEstudianteEnCarrera() {
+        return estudianteEnCarrera;
+    }
+
+    public void setEstudianteEnCarrera(Estudiante estudianteEnCarrera) {
+        this.estudianteEnCarrera = estudianteEnCarrera;
+    }
 }
