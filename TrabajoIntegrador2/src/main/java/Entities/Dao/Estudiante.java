@@ -26,8 +26,8 @@ public class Estudiante {
     @Column
     private String CiudadResidencia;
 
-    @OneToMany(mappedBy = "estudianteEnCarrera", fetch= FetchType.LAZY)
-    private List<CarrerasCursadas> carrera;
+    @OneToMany(mappedBy = "estudianteEnCurso", fetch= FetchType.LAZY)
+    private List<Inscripcion> carreras;
 
     // Default constructor
     public Estudiante() {
@@ -99,13 +99,11 @@ public class Estudiante {
         this.libretaUniversitaria = libretaUniversitaria;
     }
 
-    public List<CarrerasCursadas> getCarreras() {
-        return carrera;
+    public List<Inscripcion> getCarreras() {
+        return carreras;
     }
 
-    public void setCarreras(List<CarrerasCursadas> Carreras) {
-        this.carrera = Carreras;
-    }
+
 
     @Override
     public String toString() {

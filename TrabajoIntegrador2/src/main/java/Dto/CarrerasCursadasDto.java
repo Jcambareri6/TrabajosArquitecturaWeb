@@ -1,3 +1,9 @@
+package Dto;
+
+import Entities.Dao.Carrera;
+
+import java.util.List;
+
 public class CarrerasCursadasDto {
     private List<Carrera> carreras;
     private String NombreCarrera;

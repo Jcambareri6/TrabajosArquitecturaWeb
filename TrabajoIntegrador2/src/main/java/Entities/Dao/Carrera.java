@@ -16,7 +16,7 @@ public class Carrera {
     private int Anios;
 
     @OneToMany(mappedBy = "carreraCursada",fetch = FetchType.LAZY)
-    private List<CarrerasCursadas> estudiante;
+    private List<Inscripcion> estudiante;
 
     public Carrera(int idCarrera, String nombre, int anios) {
         this.idCarrera = idCarrera;

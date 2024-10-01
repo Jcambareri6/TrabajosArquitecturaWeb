@@ -1,17 +1,12 @@
 package org.example;
 
 import Entities.Dao.Carrera;
-import Entities.Dao.CarrerasCursadas;
-import Entities.Dao.CarrerasCursadasPk;
 
 import Entities.Dao.Estudiante;
-import Repository.CarreraRepository;
-import Repository.CarrerasCursadasRepository;
-import Repository.EstudianteRepository;
-
-
-import java.util.Date;
-import java.util.List;
+import Entities.Dao.Inscripcion;
+import repository.CarreraRepository;
+import repository.InscripcionRepository;
+import repository.EstudianteRepository;
 
 
 public class App {
@@ -20,7 +15,7 @@ public class App {
 
         CarreraRepository cr = new CarreraRepository();
         EstudianteRepository repo = new EstudianteRepository();
-        CarrerasCursadasRepository carrerasCursadaRepo = new CarrerasCursadasRepository();
+        InscripcionRepository carrerasCursadaRepo = new InscripcionRepository();
 
 
         Carrera carrera1 = new Carrera(1, "dentista", 5);
@@ -29,23 +24,27 @@ public class App {
         cr.add(carrera1);
         cr.add(carrera2);
 
-//
+
         //dar de alta un estudiante
         Estudiante estudiantePrueba = new Estudiante(1,"Prueba", "Apellido",43,"Masculino","Tandil");
-        repo.add(estudiantePrueba);
-        Carrera c = cr.getById(1);
-        Estudiante es = repo.getById(1);
+        repo.AddEstudiante(estudiantePrueba);
+        Estudiante estudiantePrueba2 = new Estudiante(2,"JOAQUITO","CAMBARERI",64,"MASCULINO","NECOCITY");
+        repo.AddEstudiante(estudiantePrueba2);
+        Carrera c = cr.findBy(2);
+        Estudiante es = repo.findByLibretaUniversitaria(1);
+        Estudiante es1 = repo.findByLibretaUniversitaria(2);
 
 
 
 
         //matricular un estudiante en una carrera
         System.out.println("antes de instanciar carrerasCursadas" );
-        CarrerasCursadas cr1 = new CarrerasCursadas(es,c,null);
+        Inscripcion cr1 = new Inscripcion(c,es,false);
+        Inscripcion cr2 = new Inscripcion(c,es1,true);
 
 
-
-        carrerasCursadaRepo.add(cr1);
+        carrerasCursadaRepo.MatricularEstudiante(cr1);
+        carrerasCursadaRepo.MatricularEstudiante(cr2);
 
 //        carrerasCursadaRepo.add(cr2);
 //        carrerasCursadaRepo.add(cr3);

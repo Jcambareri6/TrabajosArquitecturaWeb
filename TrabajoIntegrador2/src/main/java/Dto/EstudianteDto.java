@@ -1,3 +1,5 @@
+package Dto;
+
 public class EstudianteDto{
 
     private int libretaUniversitaria;
