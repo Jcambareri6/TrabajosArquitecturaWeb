@@ -9,7 +9,7 @@ public class EstudianteDto{
     private String Genero;
     private String CiudadResidencia;
 
-    public EstudianteDto(int libretaUniversitaria, String Nombre, String Apellido, int Edad, String Genero, String CiudadResidencia) {
+    public EstudianteDto(int libretaUniversitaria, String Nombre, int Edad, String Genero, String CiudadResidencia) {
         this.libretaUniversitaria = libretaUniversitaria;
         this.Nombre = Nombre;
         this.Apellido = Apellido;

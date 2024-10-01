@@ -5,35 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdd92d82-be0a-4587-a73b-7be125507b2b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/Inscripcion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryCarrera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryEstudiante.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryInscripcion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/InscripcionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/850af4f1-c375-4326-a7cf-9dfb72c9338f.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/850af4f1-c375-4326-a7cf-9dfb72c9338f/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/850af4f1-c375-4326-a7cf-9dfb72c9338f/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/850af4f1-c375-4326-a7cf-9dfb72c9338f/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/850af4f1-c375-4326-a7cf-9dfb72c9338f/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/850af4f1-c375-4326-a7cf-9dfb72c9338f/storage_v2/_src_/schema/tp2.NsEBAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dto/CarreraDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dto/CarreraDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dto/CarrerasCursadasDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dto/CarrerasCursadasDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dto/EstudianteDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dto/EstudianteDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Dao/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/Carrera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Dao/CarrerasCursadas.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Dao/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/Estudiante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/CarreraRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/CarreraRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/CarrerasCursadasRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/EstudianteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/EstudianteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/RepositoryAbstract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryCarrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryCarrera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryEstudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryEstudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryInscripcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryInscripcion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/CarreraRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/CarreraRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/EstudianteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/EstudianteRepository.java" afterDir="false" />
     </list>
-    <list id="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" name="Changes by Victoria Ledesma" comment="" />
+    <list id="9e66b7bc-cb04-4306-a108-1a12fe577da9" name="Changes by alans" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/InscripcionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/InscripcionRepository.java" afterDir="false" />
+    </list>
+    <list id="cde7f20d-c640-4ed8-b286-3612bcc6306d" name="Changes by paulamanzalini" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryCarrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryCarrera.java" afterDir="false" />
+    </list>
+    <list id="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" name="Changes by Usuario" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dto/CarrerasCursadasDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dto/CarrerasCursadasDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Dao/Inscripcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/Inscripcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryInscripcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryInscripcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/EstudianteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/EstudianteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/InscripcionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/InscripcionRepository.java" afterDir="false" />
+    </list>
+    <list id="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" name="Changes by Victoria Ledesma" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dto/CarreraDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dto/CarreraDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dto/EstudianteDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dto/EstudianteDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Dao/Inscripcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Dao/Inscripcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/CarreraRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/CarreraRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/EstudianteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/EstudianteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/InscripcionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/InscripcionRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,8 +44,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,6 +55,101 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/repository/CarreraRepository.java">
+      <ranges>
+        <range start1="3" end1="3" start2="3" end2="5" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="4" end1="4" start2="6" end2="7" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="10" end1="10" start2="13" end2="14" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="26" end1="26" start2="30" end2="44" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="28" end1="29" start2="46" end2="47" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="30" end1="31" start2="48" end2="49" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="35" end1="37" start2="53" end2="55" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="40" end1="44" start2="58" end2="61" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="48" end1="49" start2="65" end2="67" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="50" end1="51" start2="68" end2="68" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="53" end1="54" start2="70" end2="75" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="56" end1="111" start2="77" end2="92" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="112" end1="115" start2="93" end2="94" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/repository/InscripcionRepository.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="3" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="4" end1="5" start2="5" end2="6" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="8" end1="8" start2="9" end2="11" changelist="9e66b7bc-cb04-4306-a108-1a12fe577da9" />
+        <range start1="24" end1="24" start2="27" end2="33" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="26" end1="27" start2="35" end2="36" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="28" end1="29" start2="37" end2="38" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="33" end1="36" start2="42" end2="45" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="39" end1="41" start2="48" end2="51" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="48" end1="50" start2="58" end2="59" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryInscripcion.java">
+      <ranges>
+        <range start1="3" end1="3" start2="3" end2="5" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="5" end1="8" start2="7" end2="10" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/org/example/App.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="4" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="6" end1="6" start2="8" end2="9" changelist="9e66b7bc-cb04-4306-a108-1a12fe577da9" />
+        <range start1="9" end1="9" start2="12" end2="14" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="14" end1="19" start2="19" end2="22" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="23" end1="25" start2="26" end2="28" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="27" end1="28" start2="30" end2="32" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="29" end1="30" start2="33" end2="34" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="31" end1="35" start2="35" end2="38" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="37" end1="37" start2="40" end2="41" changelist="9e66b7bc-cb04-4306-a108-1a12fe577da9" />
+        <range start1="38" end1="40" start2="42" end2="42" changelist="9e66b7bc-cb04-4306-a108-1a12fe577da9" />
+        <range start1="41" end1="44" start2="43" end2="46" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="45" end1="47" start2="47" end2="49" changelist="9e66b7bc-cb04-4306-a108-1a12fe577da9" />
+        <range start1="51" end1="56" start2="53" end2="58" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="57" end1="68" start2="59" end2="62" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="69" end1="74" start2="63" end2="75" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="75" end1="77" start2="76" end2="81" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="78" end1="80" start2="82" end2="82" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/Entities/Dao/Inscripcion.java">
+      <ranges>
+        <range start1="17" end1="18" start2="17" end2="17" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="21" end1="22" start2="20" end2="21" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="26" end1="28" start2="25" end2="25" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="29" end1="29" start2="26" end2="41" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="30" end1="31" start2="42" end2="42" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="34" end1="34" start2="45" end2="48" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/InterfacesRepository/RepositoryCarrera.java">
+      <ranges>
+        <range start1="7" end1="8" start2="7" end2="8" changelist="cde7f20d-c640-4ed8-b286-3612bcc6306d" />
+        <range start1="11" end1="12" start2="11" end2="12" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/repository/EstudianteRepository.java">
+      <ranges>
+        <range start1="10" end1="10" start2="10" end2="11" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="27" end1="27" start2="28" end2="37" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="28" end1="28" start2="38" end2="42" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="30" end1="31" start2="44" end2="45" changelist="4e8b1f01-68b6-4b16-abff-e7b8897b64c6" />
+        <range start1="37" end1="38" start2="51" end2="52" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="40" end1="41" start2="54" end2="55" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="44" end1="47" start2="58" end2="61" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="53" end1="54" start2="67" end2="67" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="55" end1="58" start2="68" end2="70" changelist="bdd92d82-be0a-4587-a73b-7be125507b2b" />
+        <range start1="61" end1="63" start2="73" end2="74" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="65" end1="66" start2="76" end2="76" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="77" end1="79" start2="87" end2="88" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="80" end1="81" start2="89" end2="89" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="83" end1="84" start2="91" end2="92" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="92" end1="94" start2="100" end2="101" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+        <range start1="95" end1="96" start2="102" end2="102" changelist="2719c050-6b4e-4c0c-98ff-20b2e88e7d8a" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -86,6 +183,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="repository" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\musimundo\Desktop\arquitecturasWeb\TrabajosArquitecturaWeb\TrabajoIntegrador2\src\main" />
       <recent name="C:\Users\musimundo\Desktop\arquitecturasWeb\TrabajosArquitecturaWeb\TrabajoIntegrador2\src\main\java" />
@@ -144,7 +244,7 @@
       <workItem from="1727273341685" duration="5700000" />
       <workItem from="1727657626756" duration="10250000" />
       <workItem from="1727724965050" duration="7979000" />
-      <workItem from="1727783741695" duration="8945000" />
+      <workItem from="1727783741695" duration="15944000" />
     </task>
     <servers />
   </component>

@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class EstudianteRepository implements RepositoryEstudiante {
     private static EstudianteRepository Singleton = null;
@@ -25,44 +26,53 @@ public class EstudianteRepository implements RepositoryEstudiante {
         return Singleton;
     }
 
-
+    private EstudianteDto convertToDto(Estudiante estudiante) {
+        return new EstudianteDto(
+                estudiante.getLibretaUniversitaria(),
+                estudiante.getNombre(),
+                estudiante.getEdad(),
+                estudiante.getGenero(),
+                estudiante.getCiudadResidencia()
+        );
+    }
 
     @Override
-    public void AddEstudiante(Estudiante es) {
+    public void delete(Estudiante e){
+        this.em.remove(e);
+    }
+
+    @Override
+    public void add(Estudiante es) {
         em.getTransaction().begin();
         em.persist(es);
         em.getTransaction().commit();
     }
 
     @Override
-    public List<Estudiante> getOrderByEdad() {
+    public List<EstudianteDto> getOrderByEdad() {
         List<Estudiante> consulta = em.createQuery("SELECT e FROM Estudiante e ORDER BY e.Edad", Estudiante.class)
                 .getResultList();
-        return consulta;
+        return consulta.stream().map(this::convertToDto).collect(Collectors.toList());
     }
 
     @Override
-    public List<Estudiante> GetAll() {
-        List<Estudiante> Consulta = this.em.createQuery("SELECT e from Estudiante  e ",Estudiante.class).getResultList();
-        return Consulta;
+    public List<EstudianteDto> GetAll() {
+        List<Estudiante> consulta = this.em.createQuery("SELECT e from Estudiante  e ",Estudiante.class).getResultList();
+        return consulta.stream().map(this::convertToDto).collect(Collectors.toList());
     }
 
     @Override
     public Estudiante findByLibretaUniversitaria(int LibretaUniversitaria) {
         return this.em.find(Estudiante.class,LibretaUniversitaria);
     }
-
     @Override
-    public List<Estudiante> getAllByGenero(String genero) {
-
-        List<Estudiante> resultados = em.createQuery("SELECT e " +
+    public List<EstudianteDto> getAllByGenero(String genero) {
+        List<Estudiante> consulta = em.createQuery("SELECT e " +
                         "FROM Estudiante e WHERE e.Genero = :genero", Estudiante.class)
                 .setParameter("genero", genero)
                 .getResultList();
-        return resultados;
-
+        return consulta.stream().map(this::convertToDto).collect(Collectors.toList());
     }
-
 
     @Override
     //actual tiene que devolver dto
@@ -75,13 +85,11 @@ public class EstudianteRepository implements RepositoryEstudiante {
                 .setParameter("carrera", carrera)
                 .setParameter("ciudad", Ciudad)
                 .getResultList();
-        return null;
-
+        return consulta.stream().map(this::convertToDto).collect(Collectors.toList());
     }
 
-
     //recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia (anterior)
-    public List<Estudiante> getAllByCarreraAndCiudad(String carrera, String ciudad) {
+    public List<EstudianteDto> getAllByCarreraAndCiudad(String carrera, String ciudad) {
         List<Estudiante> consulta = em.createQuery(
                         "SELECT e FROM Estudiante e " +
                                 "INNER JOIN Inscripcion cc ON e.libretaUniversitaria = cc.id.idEstudiante " +
@@ -90,8 +98,6 @@ public class EstudianteRepository implements RepositoryEstudiante {
                 .setParameter("carrera", carrera)
                 .setParameter("ciudad", ciudad)
                 .getResultList();
-
-        return consulta;
+        return consulta.stream().map(this::convertToDto).collect(Collectors.toList());
     }
-
 }

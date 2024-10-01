@@ -1,13 +1,17 @@
 package repository;
 
 import Dto.CarreraDto;
+import Dto.CarreraReporteDto;
+import Dto.EstudianteDto;
 import Entities.Dao.Carrera;
+import Entities.Dao.Estudiante;
 import InterfacesRepository.RepositoryCarrera;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CarreraRepository implements RepositoryCarrera {
     private static CarreraRepository Singleton= null;
@@ -24,95 +28,70 @@ public class CarreraRepository implements RepositoryCarrera {
         }
         return Singleton;
     }
+    private CarreraDto convertToDto(Carrera carrera) {
+        return new CarreraDto(
+                carrera.getIdCarrera(),
+                carrera.getNombre(),
+                carrera.getAnios()
+        );
+    }
+//    private CarreraReporteDto convertReporteDto(Carrera carrera) {
+//        return new CarreraReporteDto(
+//                carrera.getIdCarrera(),
+//                carrera.getNombre(),
+//                carrera.getAnios()
+//        );
+//    }
 
     @Override
-    public void add(Carrera c) {
+    public void add(Carrera carrera) {
         em.getTransaction().begin();
-        em.persist(c);
+        em.persist(carrera);
         em.getTransaction().commit();
     }
 
     @Override
-    public void delete(Carrera c) {
-        this.em.remove(c);
+    public void delete(Carrera carrera) {
+        this.em.remove(carrera);
     }
 
     @Override
-    public List<Carrera> getAll() {
-        List<Carrera> carreras = em.createQuery("SELECT c FROM Carrera c", Carrera.class).getResultList();
-         return carreras;
-
+    public List<CarreraDto> getAll() {
+        List<Carrera> consulta = em.createQuery("SELECT c FROM Carrera c", Carrera.class).getResultList();
+         return consulta.stream().map(this::convertToDto).collect(Collectors.toList());
     }
 
     @Override
     public Carrera findBy(int id) {
-        return this.em.find(Carrera.class,id);
+        Carrera carrera =this.em.find(Carrera.class,id);
+        return carrera;
     }
-
     @Override
     public List<CarreraDto> getCarrerasOrderByCantidadInscriptos() {
-        return null;
+        List<Carrera> consulta = em.createQuery(
+                "SELECT c FROM Carrera c " +
+                "WHERE size(c.estudiante) > 0 " +
+               "ORDER BY size(c.estudiante) DESC", Carrera.class).getResultList();
+        return consulta.stream().map(this::convertToDto).collect(Collectors.toList());
     }
 
-//    @Override
-//    public List<Carrera> getAll() {
-//        List<Carrera> carrerasDisponibles= this.em.createQuery("SELECT c FROM Carrera c", Carrera.class).getResultList();
-//        return carrerasDisponibles;
-//    }
+//    public List<CarreraReporteDto> getReporte(){
+//        List<Carrera> consulta = em.createQuery(
+//                "SELECT c.Nombre, " +
+//               "YEAR(i.Fecha_Inscripcion) AS Anio, " +
+//                "COUNT(CASE WHEN i.Fecha_Inscripcion IS NOT NULL THEN 1 END) AS Inscriptos, " +
+//                "COUNT(CASE WHEN i.Fecha_graduacion IS NOT NULL THEN 1 END) AS Egresados " +
+//                "FROM Inscripcion i " +
+//                "JOIN Carrera c ON i.id.idCarrera = c.idCarrera " +
+//                "LEFT JOIN " +
+//                "Estudiante e ON i.id.idEstudiante = e.libreta_universitaria " +
+//                "GROUP BY " +
+//                "c.Nombre_Carrera, YEAR(i.Fecha_Inscripcion), YEAR(i.Fecha_graduacion) " +
+//                "ORDER BY " +
+//                "c.Nombre_Carrera ASC," +
+//                "Anio ASC").getResultList();
 //
-//    @Override
-//    public Carrera getById(int id) {
-//       return this.em.find(Carrera.class,id);
-//    }
-//
-//    @Override
-//    public Boolean delete(int id) {
-//        em.getTransaction().begin();
-//        Carrera c = em.find(Carrera.class, id);
-//
-//        if (c != null) {
-//
-//            this.em.remove(c);
-//            this.em.getTransaction().commit();
-//            return true;
-//        } else {
-//            this.em.getTransaction().rollback();
-//            return false;
-//        }
-//    }
-//
-//    public void add (Carrera c){
-//        em.getTransaction().begin();
-//        em.persist(c);
-//        em.getTransaction().commit();
-//
-//    }
-//    public List<Carrera> getCarrerasOrderByInscriptos() {
-//        List<Carrera> carrerasInscriptos = em.createQuery("SELECT c FROM Carrera c " +
-//                "WHERE size(c.estudiante) > 0 " +
-//                "ORDER BY size(c.estudiante) DESC", Carrera.class).getResultList();
-//        return carrerasInscriptos;
-//    }
-
-//    public getReporte(){
-//        List<Object> Consulta = em.createQuery(
-//        "SELECT c.Nombre, " +
-//        "YEAR(cc.Fecha_Inscripcion) AS Anio, " +
-//        "COUNT(CASE WHEN cc.Fecha_Inscripcion IS NOT NULL THEN 1 END) AS Inscriptos, " +
-//        "COUNT(CASE WHEN cc.Fecha_graduacion IS NOT NULL THEN 1 END) AS Egresados " +
-//        "FROM CarrerasCursadas cc " +
-//        "JOIN Carrera c ON cc.id.idCarrera = c.idCarrera " +
-//        "LEFT JOIN " +
-//        "Estudiante e ON cc.id.idEstudiante = e.libreta_universitaria " +
-//        "GROUP BY " +
-//        "c.Nombre_Carrera, YEAR(cc.Fecha_Inscripcion), YEAR(cc.Fecha_graduacion) " +
-//        "ORDER BY " +
-//        "c.Nombre_Carrera ASC," +
-//        "Anio ASC").getResultList();
-//
-//        //instanciar con el dto
-//
-//        returnConsulta;
+//        return consulta.stream().map(this::convertToDto).collect(Collectors.toList());
 //    }
 
 }

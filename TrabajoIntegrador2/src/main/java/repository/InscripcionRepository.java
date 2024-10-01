@@ -1,11 +1,14 @@
 package repository;
 
+
 import Entities.Dao.Inscripcion;
 import InterfacesRepository.RepositoryInscripcion;
-
+import Dto.InscripcionDto;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class InscripcionRepository implements RepositoryInscripcion {
     private static InscripcionRepository Singleton = null;
@@ -22,23 +25,30 @@ public class InscripcionRepository implements RepositoryInscripcion {
         }
         return Singleton;
     }
+    private InscripcionDto convertToDto(Inscripcion inscripcion) { //?????
+        return new InscripcionDto(
+                inscripcion.getCarreraCursada(),
+                inscripcion.getEstudianteEnCurso()
+        );
+    }
 
     @Override
-    public void MatricularEstudiante(Inscripcion insc) {
+    public void add(Inscripcion inscripcion) {
         em.getTransaction().begin();
-        em.merge(insc);
+        em.merge(inscripcion);
         em.getTransaction().commit();
     }
 
     @Override
-    public void deleteInscripcion(int id) {
-        Inscripcion insc= this.em.find(Inscripcion.class,id);
-        this.em.remove(insc);
+    public void delete(int id) {
+        Inscripcion inscripcion = this.em.find(Inscripcion.class,id);
+        this.em.remove(inscripcion);
     }
 
     @Override
-    public void getAll() {
-
+    public List<InscripcionDto> getAll() {
+        List<Inscripcion> consulta = em.createQuery("SELECT i FROM Inscripcion i", Inscripcion.class).getResultList();
+        return consulta.stream().map(this::convertToDto).collect(Collectors.toList());
     }
 
     @Override
@@ -46,8 +56,7 @@ public class InscripcionRepository implements RepositoryInscripcion {
         return this.em.find(Inscripcion.class,id);
     }
 
-
-    }
+}
 
 
 

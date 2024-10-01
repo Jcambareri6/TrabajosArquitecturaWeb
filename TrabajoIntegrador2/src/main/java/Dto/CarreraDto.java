@@ -9,7 +9,7 @@ public class CarreraDto {
     public CarreraDto(int idCarrera, String nombre, int anios) {
         this.idCarrera = idCarrera;
         this.nombre = nombre;
-        Anios = anios;
+        this.Anios = anios;
     }
 
     public int getIdCarrera() {
