@@ -5,11 +5,13 @@ public class CarreraDto {
     private int idCarrera;
     private String nombre;
     private int Anios;
+    private int cantidadInscriptos;
 
-    public CarreraDto(int idCarrera, String nombre, int anios) {
+    public CarreraDto(int idCarrera, String nombre, int anios,int cantidadInscriptos) {
         this.idCarrera = idCarrera;
         this.nombre = nombre;
         this.Anios = anios;
+        this.cantidadInscriptos=cantidadInscriptos;
     }
 
     public int getIdCarrera() {
@@ -22,12 +24,21 @@ public class CarreraDto {
         return Anios;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    public int getCantidadInscriptos() {
+        return cantidadInscriptos;
+    }
+
+    public void setCantidadInscriptos(int cantidadInscriptos) {
+        this.cantidadInscriptos = cantidadInscriptos;
+    }
+
+    @Override
+    public String toString() {
         return "CarreraDto{" +
                 "idCarrera=" + idCarrera +
                 ", nombre='" + nombre + '\'' +
                 ", Anios=" + Anios +
+                ", cantidadInscriptos=" + cantidadInscriptos +
                 '}';
     }
 }

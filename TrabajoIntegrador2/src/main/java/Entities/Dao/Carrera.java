@@ -51,4 +51,7 @@ public class Carrera {
     public void setAnios(int anios) {
         Anios = anios;
     }
+    public  int GetCantInscriptos(){
+        return this.estudiante.size();
+    }
 }

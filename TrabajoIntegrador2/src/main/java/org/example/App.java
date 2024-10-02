@@ -1,6 +1,7 @@
 package org.example;
 
 import Dto.CarreraDto;
+import Dto.CarreraReporteDto;
 import Dto.EstudianteDto;
 import Entities.Dao.Carrera;
 
@@ -70,7 +71,7 @@ public class App {
         System.out.println("2.f) recuperar las carreras con estudiantes inscriptos y ordenar por cantidad de inscriptos ");
         List<CarreraDto> carreras = carreraRepository.getCarrerasOrderByCantidadInscriptos();
                 for (CarreraDto c : carreras) {
-                    System.out.println("probando 2.f");
+
                    System.out.println(c.toString());
                  }
 
@@ -79,6 +80,14 @@ public class App {
             for (EstudianteDto e : Estudiantes_Carrera_CiudadResidencia){
                 System.out.println(e.toString());
             }
+
+        System.out.println("3) Generar un reporte de las carreras, que para cada carrera incluya información de los \n" +
+                "inscriptos y egresados por año. Se deben ordenar las carreras alfabéticamente, y presentar \n" +
+                "los años de manera cronológica");
+           List<CarreraReporteDto>  carrerasReporte =carreraRepository.getReporte();
+           for(CarreraReporteDto c : carrerasReporte ){
+               System.out.println(c.toString());
+           }
 
     }
 }

@@ -10,6 +10,7 @@
 		<class>Entities.Dao.Estudiante</class>
 		<class> Entities.Dao.Carrera</class>
 
+
 		
 		<properties>
 

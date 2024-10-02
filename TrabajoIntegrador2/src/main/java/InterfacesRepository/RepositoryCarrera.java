@@ -1,5 +1,6 @@
 package InterfacesRepository;
 
+import Dto.CarreraReporteDto;
 import Entities.Dao.Carrera;
 import Dto.CarreraDto;
 
@@ -12,5 +13,6 @@ public interface RepositoryCarrera  {
     public List<CarreraDto> getAll();
     public Carrera findBy(int id);
     public List<CarreraDto> getCarrerasOrderByCantidadInscriptos();
+    public List<CarreraReporteDto> getReporte();
 
 }
