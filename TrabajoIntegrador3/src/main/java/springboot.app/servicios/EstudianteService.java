@@ -118,5 +118,26 @@ public class EstudianteServicio implements BaseService<Estudiante> {
             throw new Exception(e.getMessage());
         }
     }
+    @Transactional
+    public Estudiante save(Estudiante entity) throws Exception {
+        try {
+            return (Estudiante)this.estudianteRepositorio.save(entity);
+        } catch (Exception var3) {
+            Exception e = var3;
+            throw new Exception(e.getMessage());
+        }
+    }
 
+    @Transactional
+    public Estudiante update(int id, Estudiante entity) throws Exception {
+        try {
+            Optional<Estudiante> entityOpcional = this.estudianteRepositorio.findById(id);
+            Estudiante e = (Estudiante)entityOpcional.get();
+            e = (Estudiante)this.estudianteRepositorio.save(entity);
+            return e;
+        } catch (Exception var5) {
+            Exception e = var5;
+            throw new Exception(e.getMessage());
+        }
+    }
 }
