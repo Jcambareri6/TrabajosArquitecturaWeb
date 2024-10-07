@@ -12,7 +12,7 @@ public class Carrera {
     private int idCarrera;
 
     @Column
-    private String Nombre;
+    private String nombre;
 
     @Column
     private int Anios;
@@ -22,7 +22,7 @@ public class Carrera {
 
     public Carrera(int idCarrera, String nombre, int anios) {
         this.idCarrera = idCarrera;
-        Nombre = nombre;
+        nombre = nombre;
         Anios = anios;
     }
 
@@ -39,11 +39,10 @@ public class Carrera {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String nombre) {
-        Nombre = nombre;
+    public void setNombre(String nombre) {nombre = nombre;
     }
 
     public int getAnios() {

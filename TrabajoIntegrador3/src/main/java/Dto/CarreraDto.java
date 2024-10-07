@@ -13,6 +13,13 @@ public class CarreraDto {
         this.Anios = anios;
         this.cantidadInscriptos=cantidadInscriptos;
     }
+    public CarreraDto(int idCarrera, String nombre, int anios) {
+        this.idCarrera = idCarrera;
+        this.nombre = nombre;
+        this.Anios = anios;
+
+    }
+
 
     public int getIdCarrera() {
         return idCarrera;

@@ -2,16 +2,21 @@ package InterfacesRepository;
 
 import Dto.EstudianteDto;
 import Entities.Dao.Estudiante;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface RepositoryEstudiante {
+public interface RepositoryEstudiante extends JpaRepository<Estudiante,Integer> {
 
-    public void delete(Estudiante e);
-    public void add(Estudiante es);
-    public List<EstudianteDto> getOrderByEdad();
-    public List<EstudianteDto>GetAll();
-    public Estudiante findByLibretaUniversitaria(int LibretaUniversitaria);
-    public List<EstudianteDto>getAllByGenero(String genero);
+
+    public Estudiante findByLibretaUniversitaria(int libretaUniversitaria);
+    @Query("select new Dto.EstudianteDto(e.libretaUniversitaria,e.Nombre,e.Edad,e.Genero,e.CiudadResidencia) " +
+            "from Estudiante  e where e.Genero = :genero")
+    public List<EstudianteDto>getEstudiantesByGenero(String genero);
+    @Query("SELECT new Dto.EstudianteDto(e.libretaUniversitaria,e.Nombre,e.Edad,e.Genero,e.CiudadResidencia) FROM Estudiante e " +
+            "JOIN e.carreras cc " +
+            "JOIN cc.carreraCursada c " +
+            "WHERE c.nombre = :carrera AND e.CiudadResidencia = :ciudad")
     public List<EstudianteDto>getEstudiantesByCarreraOrderByCiudad(String carrera, String Ciudad);
 }
