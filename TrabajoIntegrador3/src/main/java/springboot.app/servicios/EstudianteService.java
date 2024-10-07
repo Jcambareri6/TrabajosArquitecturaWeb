@@ -26,7 +26,7 @@ public class EstudianteServicio implements BaseService<Estudiante> {
     @Transactional
     public void delete(Estudiante e) throws Exception {
         try {
-            if (this.estudianteRepositorio.existsById(e.id)) {
+            if (this.estudianteRepositorio.findByLibretaUniversitaria(e.id)) {
                 this.estudianteRepositorio.delete(e);
             }
         } catch (Exception var3) {
@@ -37,7 +37,7 @@ public class EstudianteServicio implements BaseService<Estudiante> {
 
     public void add(Estudiante e){
         try {
-            if (this.estudianteRepositorio.existsById(e.id)) {
+            if (this.estudianteRepositoriofindByLibretaUniversitaria(e.id)) {
                 this.estudianteRepositorio.add(e);
             }
         } catch (Exception var3) {
