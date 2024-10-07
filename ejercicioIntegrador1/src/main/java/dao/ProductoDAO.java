@@ -1,4 +1,4 @@
-package dao;
+gitpackage dao;
 
 import entities.Producto;
 import dto.ProductoDTO;
