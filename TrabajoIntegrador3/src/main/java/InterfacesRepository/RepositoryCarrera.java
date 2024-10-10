@@ -12,9 +12,6 @@ import java.util.List;
 public interface RepositoryCarrera extends JpaRepository<Carrera,Integer> {
 
 
-
-
-
     Carrera findByNombre(String nombre);
     @Query("SELECT new Dto.CarreraDto(c.idCarrera, c.nombre, c.Anios ,c.estudiante.size) FROM Carrera c ORDER BY SIZE(c.estudiante) DESC")
     public List<CarreraDto> getCarrerasOrderByCantidadInscriptos();
