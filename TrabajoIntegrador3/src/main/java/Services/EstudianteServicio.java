@@ -38,9 +38,19 @@ public class EstudianteServicio implements BaseService<Estudiante> {
         }
     }
 
+    public EstudianteDto findByNombre(String nombre) throws Exception {
+        try {
+            Optional<EstudianteDto> estudianteBuscado = this.estudianteRepositorio.findByNombre(nombre);
+            return (EstudianteDto) estudianteBuscado.get();
+        } catch (Exception var3) {
+            Exception e = var3;
+            throw new Exception(e.getMessage());
+        }
+    }
+
     public void add(Estudiante e) throws Exception {
         try {
-            if (!this.estudianteRepositorio.findByLibretaUniversitaria(e.getLibretaUniversitaria()).isPresent()) {
+            if ( this.estudianteRepositorio.findByLibretaUniversitaria(e.getLibretaUniversitaria()) == null) {
                 this.estudianteRepositorio.save(e);
             }
         } catch (Exception var3) {
@@ -49,7 +59,10 @@ public class EstudianteServicio implements BaseService<Estudiante> {
         }
     }
 
-    @Transactional
+
+    
+
+    /* @Transactional
     public List<EstudianteDto> getOrderByEdad() throws Exception {
         List<Estudiante> resultado = this.estudianteRepositorio.getOrderByEdad();
 
@@ -67,7 +80,7 @@ public class EstudianteServicio implements BaseService<Estudiante> {
             throw new Exception(e.getMessage());
         }
         
-    }
+    } */
 
     /* 
     @Transactional
@@ -88,7 +101,7 @@ public class EstudianteServicio implements BaseService<Estudiante> {
         return this.estudianteRepositorio.findAll();
     }
 
-    @Transactional
+    /* @Transactional
     public Estudiante findByLibretaUniversitaria(int LibretaUniversitaria) throws Exception {
         try {
             Optional<Estudiante> estudianteBuscado = this.estudianteRepositorio
@@ -98,9 +111,9 @@ public class EstudianteServicio implements BaseService<Estudiante> {
             Exception e = var3;
             throw new Exception(e.getMessage());
         }
-    }
+    } */
 
-    @Transactional
+    /* @Transactional
     public List<EstudianteDto> getAllByGenero(String genero) throws Exception {
         List<Estudiante> resultado = this.estudianteRepositorio.getAllByGenero(genero);
 
@@ -117,9 +130,9 @@ public class EstudianteServicio implements BaseService<Estudiante> {
             Exception e = var4;
             throw new Exception(e.getMessage());
         }
-    }
+    } */
 
-    @Transactional
+    /* @Transactional
     public List<EstudianteDto>getEstudiantesByCarreraOrderByCiudad(String carrera, String Ciudad) throws Exception {
         List<Estudiante> resultado = this.estudianteRepositorio.getEstudiantesByCarreraOrderByCiudad(carrera,Ciudad);
 
@@ -136,7 +149,7 @@ public class EstudianteServicio implements BaseService<Estudiante> {
             Exception e = var4;
             throw new Exception(e.getMessage());
         }
-    }
+    } */
 
     @Transactional
     public Estudiante save(Estudiante entity) throws Exception {

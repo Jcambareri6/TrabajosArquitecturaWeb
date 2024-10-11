@@ -1,17 +1,17 @@
-package springboot.app.controllers;
+package controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import springboot.app.modelos.Estudiante;
-import springboot.app.servicios.estudianteServicio;
+import Entities.Dao.Estudiante;
+import Services.EstudianteServicio;
 
 @RestController
-@RequestMapping("/estudiante")
-public class estudianteController {
+@RequestMapping("/estudiantes")
+public class EstudianteController {
     @Autowired
-    private estudianteServicio estudianteServicio;
+    private EstudianteServicio estudianteServicio;
 
 
     @GetMapping("")
@@ -26,14 +26,14 @@ public class estudianteController {
     @GetMapping("nombre/{nombre}")
     public ResponseEntity<?> getbyNombre(@PathVariable String nombre) {
         try{
-            return ResponseEntity.status(HttpStatus.OK).body(estudianteServicio.buscarEstudianteByNombre(nombre));
+            return ResponseEntity.status(HttpStatus.OK).body(estudianteServicio.findByNombre(nombre));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por favor intente más tarde.\"}");
         }
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getById(@PathVariable int id){
+    public ResponseEntity<?> getById(@PathVariable Long id){
         try{
             return ResponseEntity.status(HttpStatus.OK).body(estudianteServicio.findById(id));
         }catch (Exception e){
@@ -45,7 +45,7 @@ public class estudianteController {
     @PostMapping("")
     public ResponseEntity<?> save(@RequestBody Estudiante entity){
         try{
-            return ResponseEntity.status(HttpStatus.OK).body(EstudianteServicio.save(entity));
+            return ResponseEntity.status(HttpStatus.OK).body(this.estudianteServicio.save(entity));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error. No se pudo ingresar, revise los campos e intente nuevamente.\"}");
         }
@@ -54,16 +54,16 @@ public class estudianteController {
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable int id,@RequestBody Estudiante entity){
         try{
-            return ResponseEntity.status(HttpStatus.OK).body(EstudianteServicio.update(id,entity));
+            return ResponseEntity.status(HttpStatus.OK).body(this.estudianteServicio.update(id,entity));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error. No se pudo editar, revise los campos e intente nuevamente.\"}");
         }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable int id){
+    public ResponseEntity<?> delete(@PathVariable Long id){
         try{
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(EstudianteServicio.delete(id));
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(this.estudianteServicio.delete(id));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error. no se pudo eliminar intente nuevamente.\"}");
         }
